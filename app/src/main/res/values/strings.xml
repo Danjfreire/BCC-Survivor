@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">BCC Survivor</string>
-    <string name="btnTest">Teste</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="modo_jogo">Modo Jogo</string>
+    <string name="banco_de_quest_es">Banco de Questões</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.ufrpe.bccsurvivor;
+package com.wallace.bcc_survivor_questoes;
 
 import org.junit.Test;
 
