@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 /**
  * Created by wallace on 20/11/2017.
@@ -25,6 +26,7 @@ public class QuestoesDisciplina extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 Intent myIntent = new Intent(QuestoesDisciplina.this, MostrarQuestoes.class);
+                myIntent.putExtra("titulo", ((TextView)v).getText());
                 startActivity(myIntent);
             }
         });

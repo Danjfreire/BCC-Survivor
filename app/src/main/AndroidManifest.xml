@@ -26,6 +26,13 @@
             android:name=".MostrarQuestoes"
             android:theme="@style/AppThemeQ">
         </activity>
+        <activity
+            android:name=".CriarPergunta"
+            android:theme="@style/AppThemeQ"/>
+        <activity
+            android:name=".TelaExibicao"/>
+        <activity
+            android:name=".TelaExibicaoResposta"/>
     </application>
 
 </manifest>
