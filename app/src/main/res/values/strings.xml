@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">BCC Survivor</string>
-    <string name="btnTest">Teste</string>
+
+    <string name="descricao">baner</string>
+
+    <string name="LNome">NOME</string>
+    <string name="LSenha">SENHA</string>
+    <string name="btLogin">Entrar</string>
+
+    <string name="tv_Materia">Algoritimos</string>
+    <string name="tv_estrelas">1</string>
+    <string name="tv_vida">3</string>
+    <string name="tv_score">Score:  1000</string>
+    <string name="tv_Perguntas">Texto da questão aqui bla bla bla bla bla</string>
+    <string name="bt_repostaA">Alternativa A</string>
+    <string name="bt_repostaB">Alternativa B</string>
+    <string name="bt_repostaC">Alternativa C</string>
+    <string name="bt_repostaD">Alternativa D</string>
+    <string name="bt_repostaE">Alternativa E</string>
+
+    <string name="tv_Ranking">General Rank</string>
+    <string name="tv_Jogador">Player</string>
+    <string name="tv_Pontos">Points </string>
+
 </resources>

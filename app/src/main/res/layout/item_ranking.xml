@@ -18,9 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="12dp"
-        android:textSize="25dp"
-        android:textColor="@color/scoreColor"
         android:gravity="end"
-        />
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="25dp" />
 
 </LinearLayout>

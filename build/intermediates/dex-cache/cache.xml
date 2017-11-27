@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Daniel\Git\BCC-Survivor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0eacbdb9b70db884fcec013150958952f56b2de3">
+        <dex dex="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_f30a5a2691cee2f0b831b411e5cba412bb4a027a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Daniel\Git\BCC-Survivor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_69e2c8e968b43b1881207f54ed63f937ebabde51\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Daniel\Git\BCC-Survivor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d556e626bb545d51a9ec4d5bc4ead394f73ea5b9">
-        <dex dex="C:\Users\Daniel\Git\BCC-Survivor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ed4bfd7c057bc1bea00a6807ceb4cc968f6ddf63\classes.dex" />
+        <dex dex="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_33eb2b17686a73a614d212564572358c6f3ed0d7\classes.dex" />
     </item>
 
 </items>
