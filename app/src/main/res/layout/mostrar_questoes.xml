@@ -41,7 +41,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_toStartOf="@+id/imageView"
                 android:gravity="center_vertical"
-                android:text="TextView"
                 android:visibility="gone" />
         </RelativeLayout>
     </Toolbar>

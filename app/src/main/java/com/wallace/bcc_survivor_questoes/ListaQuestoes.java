@@ -35,28 +35,24 @@ public class ListaQuestoes extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View listView;
-
+        ViewHolder holder;
         if(convertView == null){
+            LayoutInflater inflater = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             listView = inflater.inflate(R.layout.item_lista, null);
+            holder = new ViewHolder(listView);
+            listView.setTag(holder);
         }else{
-            listView = (View) convertView;
-            ImageView img2 = (ImageView) listView.findViewById(R.id.iconNotification);
-            img2.clearColorFilter();
-
+            listView = convertView;
+            holder = (ViewHolder) listView.getTag();
+            holder.img.clearColorFilter();
         }
-
-        TextView titulo =(TextView) listView.findViewById(R.id.tituloItem);
-        TextView autor =(TextView) listView.findViewById(R.id.subtituloItem);
-        ImageView img = (ImageView) listView.findViewById(R.id.iconNotification);
-        titulo.setText(questoesIntroducaoComputacao[position].getAssunto() + "-" + position);
-        autor.setText(questoesIntroducaoComputacao[position].getAutor());
+        holder.titulo.setText(questoesIntroducaoComputacao[position].getAssunto() + "-" + position);
+        holder.autor.setText(questoesIntroducaoComputacao[position].getAutor());
 
         if(questoesIntroducaoComputacao[position].getResposta() == null){
-            img.setColorFilter(R.color.colorPrimaryDark);
+            holder.img.setColorFilter(R.color.colorPrimaryDark);
         }
-
         return listView;
     }
 

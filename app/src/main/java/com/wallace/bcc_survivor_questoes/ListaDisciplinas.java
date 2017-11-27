@@ -13,40 +13,13 @@ import android.widget.TextView;
  */
 
 public class ListaDisciplinas extends BaseAdapter {
-
     Context context;
+    private String[] disciplinas;
 
-    public ListaDisciplinas(Context c){
+    public ListaDisciplinas(Context c, String[] disciplinas){
         this.context = c;
+        this.disciplinas = disciplinas;
     }
-
-    private String[] disciplinas = {
-            "CÁLCULO NI",
-            "CÁLCULO NII",
-            "INTRODUÇÃO A CIÊNCIA DA COMPUTAÇÃO",
-            "INTRODUÇÃO À PROGRAMAÇÃO I",
-            "MATEMÁTICA DISCRETA I",
-            "ALGORITMOS E ESTRUTURAS DE DADOS",
-            "ÁLGEBRA VETORIAL E LINEAR PARA COMPUTAÇÃO",
-            "INTRODUÇÃO À PROGRAMAÇÃO II",
-            "MATEMÁTICA DISCRETA II",
-            "METODOLOGIA CIENTÍFICA APLICADA À COMPUTAÇÃO",
-            "CIRCUITOS DIGITAIS",
-            "ESTATÍSTICA EXPLORATÓRIA I",
-            "FÍSICA APLICADA À COMPUTAÇÃO",
-            "PROJETO E ANÁLISE DE ALGORITMOS",
-            "TEORIA DA COMPUTAÇÃO",
-            "ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES",
-            "BANCO DE DADOS S",
-            "ENGENHARIA DE SOFTWARE",
-            "PARADIGMAS DE PROGRAMAÇÃO",
-            "REDES DE COMPUTADORES",
-            "COMPILADORES",
-            "INTELIGÊNCIA ARTIFICIAL",
-            "PROJETO DE DESENVOLVIMENTO DE SOFTWARE",
-            "SISTEMAS DISTRIBUÍDOS",
-            "SISTEMAS OPERACIONAIS",
-            "COMPUTAÇÃO QUÂNTICA"};
 
     @Override
     public int getCount() {
@@ -65,15 +38,17 @@ public class ListaDisciplinas extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
-        TextView textView = (TextView) view;
+        View v;
+        ViewHolder2 h;
         if (view == null) {
-            // if it's not recycled, initialize some attributes
-            textView = new TextView(context);
+            v = new TextView(context);
+            h = new ViewHolder2(v);
+            v.setTag(h);
         } else {
-            textView = (TextView) view;
+            v = (TextView) view;
+            h =(ViewHolder2) v.getTag();
         }
-        textView.setText(disciplinas[i]);
-        return textView;
+        h.titulo.setText(disciplinas[i]);
+        return v;
     }
 }

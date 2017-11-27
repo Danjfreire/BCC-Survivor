@@ -29,7 +29,7 @@ public class CriarPergunta extends AppCompatActivity implements CaixaTextoQuesta
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getSupportFragmentManager();
-                CaixaTextoQuestao c = CaixaTextoQuestao.newInstace("Pergunta",R.id.pergunta);
+                CaixaTextoQuestao c = CaixaTextoQuestao.newInstace(getString(R.string.pergunta),R.id.pergunta);
                 c.show(fm,"pergunta");
             }
         });
@@ -38,7 +38,7 @@ public class CriarPergunta extends AppCompatActivity implements CaixaTextoQuesta
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getSupportFragmentManager();
-                CaixaTextoQuestao c = CaixaTextoQuestao.newInstace("Resposta",R.id.resposta);
+                CaixaTextoQuestao c = CaixaTextoQuestao.newInstace(getString(R.string.resposta),R.id.resposta);
                 c.show(fm,"resposta");
             }
         });

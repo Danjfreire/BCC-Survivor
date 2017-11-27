@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pergunta"/>
+            android:text="@string/pergunta"/>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="400dp">
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="resposta"/>
+                    android:text="@string/resposta"/>
             </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                     android:gravity="right"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gostou da pergunta?"/>
+                    android:text="@string/gostou_da_pergunta"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -80,13 +80,13 @@
                     <Button
                         android:layout_width="70dp"
                         android:layout_height="40dp"
-                        android:text="sim">
+                        android:text="@string/sim">
                     </Button>
                     <Button
                         android:layout_width="70dp"
                         android:layout_height="40dp"
                         android:layout_gravity="right"
-                        android:text="não">
+                        android:text="@string/nao">
                     </Button>
                 </LinearLayout>
             </LinearLayout>
