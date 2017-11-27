@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,17 +14,35 @@ import android.widget.Toast;
  */
 
 public class CriarPergunta extends AppCompatActivity implements CaixaTextoQuestao.EditNameDialogListener {
+    private EditText ed;
+    private TextView tvPergunta;
+    private TextView tvResposta;
+
+    public void onSaveInstanceState(Bundle bundle){
+        super.onSaveInstanceState(bundle);
+        bundle.putString("assunto", String.valueOf(ed.getText()));
+        bundle.putString("pergunta", String.valueOf(tvPergunta.getText()));
+        bundle.putString("resposta", String.valueOf(tvResposta.getText()));
+    }
+
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.criar_questao);
+
+        ed = (EditText) findViewById(R.id.editAssunto);
+        tvPergunta = (TextView) findViewById(R.id.pergunta);
+        tvResposta = (TextView) findViewById(R.id.resposta);
+
+        if(savedInstanceState != null){
+            ed.setText(savedInstanceState.getString("assunto"));
+            tvPergunta.setText(savedInstanceState.getString("pergunta"));
+            tvResposta.setText(savedInstanceState.getString("resposta"));
+        }
 
         Intent i = getIntent();
 
         TextView tv = (TextView) findViewById(R.id.textDisciplina);
         tv.setText(i.getExtras().getString("disciplina"));
-
-        TextView tvPergunta = (TextView) findViewById(R.id.pergunta);
-        TextView tvResposta = (TextView) findViewById(R.id.resposta);
 
         tvPergunta.setOnClickListener(new View.OnClickListener() {
             @Override

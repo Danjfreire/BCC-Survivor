@@ -29,6 +29,7 @@
             android:gravity="center_vertical"
             android:text="@string/assunto"/>
         <EditText
+            android:id="@+id/editAssunto"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:paddingLeft="16dp"/>
