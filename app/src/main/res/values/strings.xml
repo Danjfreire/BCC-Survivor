@@ -3,8 +3,8 @@
 
     <string name="descricao">baner</string>
 
-    <string name="LNome">NOME</string>
-    <string name="LSenha">SENHA</string>
+    <string name="LNome">Nome</string>
+    <string name="LSenha">Senha</string>
     <string name="btLogin">Entrar</string>
 
     <string name="tv_Materia">Algoritimos</string>
@@ -18,8 +18,8 @@
     <string name="bt_repostaD">Alternativa D</string>
     <string name="bt_repostaE">Alternativa E</string>
 
-    <string name="tv_Ranking">General Rank</string>
-    <string name="tv_Jogador">Player</string>
-    <string name="tv_Pontos">Points </string>
+    <string name="tv_Ranking">Classificação</string>
+    <string name="tv_Jogador">Jogador</string>
+    <string name="tv_Pontos">Pontuação</string>
 
 </resources>

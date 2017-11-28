@@ -1,14 +1,10 @@
 package com.ufrpe.bccsurvivor;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.List;
@@ -20,37 +16,45 @@ import java.util.List;
 public class AdapterRanking extends ArrayAdapter<Player> {
 
 
-    public AdapterRanking(Context context, int resource,List<Player>players) {
+    public AdapterRanking(Context context, int resource, List<Player>players) {
         super(context, resource,players);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
 
-        View v = convertView;
+        View view = convertView;
+        ViewHolderRanking holder;
 
-        if (v == null) {
-            LayoutInflater vi;
-            vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.item_ranking, null);
+        if (view == null) {
+            LayoutInflater vi = LayoutInflater.from(getContext());
+            view = vi.inflate(R.layout.item_ranking, null);
+            holder = new ViewHolderRanking(view);
+            view.setTag(holder);
+        }else{
+            view = convertView;
+            holder = (ViewHolderRanking)view.getTag();
         }
 
         Player player = getItem(position);
+        holder.name.setText(player.getNickname());
+        holder.score.setText(String.valueOf(player.getScore()));
 
-        if (player != null) {
-            TextView name = (TextView) v.findViewById(R.id.playername);
-            TextView score = (TextView) v.findViewById(R.id.playerscore);
+//        if (player != null) {
+//            TextView name = (TextView) view.findViewById(R.id.playername);
+//            TextView score = (TextView) view.findViewById(R.id.playerscore);
+//
+//            if (name != null) {
+//                name.setText(player.getNickname());
+//            }
+//
+//            if (score != null) {
+//                score.setText(String.valueOf(player.getScore()));
+//            }
+//
+//        }
 
-            if (name != null) {
-                name.setText(player.getNickname());
-            }
-
-            if (score != null) {
-                score.setText(String.valueOf(player.getScore()));
-            }
-
-        }
-
-        return v;
+        return view;
     }
 }
+
