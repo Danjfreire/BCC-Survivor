@@ -1,11 +1,12 @@
-package com.ufrpe.bccsurvivor;
+package com.ufrpe.bccsurvivor.jogo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.ufrpe.bccsurvivor.R;
 
 import java.util.List;
 

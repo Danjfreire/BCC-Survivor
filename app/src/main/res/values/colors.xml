@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name ="scoreColor">#ffffff</color>
     <color name="questionBackgroud">#d6d5d5</color>
+    <color name="colorYellow">#FFFF00</color>
 </resources>

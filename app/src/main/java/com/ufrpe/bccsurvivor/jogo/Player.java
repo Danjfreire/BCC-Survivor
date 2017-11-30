@@ -1,10 +1,7 @@
-package com.ufrpe.bccsurvivor;
+package com.ufrpe.bccsurvivor.jogo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-
-import java.io.Serializable;
 
 /**
  * Created by Daniel on 25/11/2017.

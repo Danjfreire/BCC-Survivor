@@ -1,15 +1,12 @@
-package com.ufrpe.bccsurvivor;
+package com.ufrpe.bccsurvivor.jogo;
 
 import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+
+import com.ufrpe.bccsurvivor.R;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
 
 public class RankingActivity extends AppCompatActivity {
 

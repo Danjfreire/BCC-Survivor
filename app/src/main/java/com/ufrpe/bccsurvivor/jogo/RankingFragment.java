@@ -1,13 +1,14 @@
-package com.ufrpe.bccsurvivor;
+package com.ufrpe.bccsurvivor.jogo;
 
 import android.app.Fragment;
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.ufrpe.bccsurvivor.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

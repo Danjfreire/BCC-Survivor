@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.ufrpe.bccsurvivor.PlayerInfoActivity">
+    tools:context="com.ufrpe.bccsurvivor.jogo.PlayerInfoActivity">
     
     <fragment
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:name="com.ufrpe.bccsurvivor.RankingFragment"
+        android:name="com.ufrpe.bccsurvivor.jogo.RankingFragment"
         android:layout_weight="1"
         android:id="@+id/fragmentRank"/>
 

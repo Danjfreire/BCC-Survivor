@@ -1,7 +1,9 @@
-package com.ufrpe.bccsurvivor;
+package com.ufrpe.bccsurvivor.jogo;
 
 import android.view.View;
 import android.widget.TextView;
+
+import com.ufrpe.bccsurvivor.R;
 
 /**
  * Created by Daniel on 28/11/2017.

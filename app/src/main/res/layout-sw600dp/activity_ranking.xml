@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ufrpe.bccsurvivor.RankingActivity"
+    tools:context="com.ufrpe.bccsurvivor.jogo.RankingActivity"
     android:orientation="horizontal">
     
     <fragment
         android:id="@+id/fragmentRank"
-        android:name="com.ufrpe.bccsurvivor.RankingFragment"
+        android:name="com.ufrpe.bccsurvivor.jogo.RankingFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
