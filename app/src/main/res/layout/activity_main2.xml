@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context="com.ufrpe.bccsurvivor.estudo.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="MENU"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"

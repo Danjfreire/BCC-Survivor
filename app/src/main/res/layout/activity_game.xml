@@ -14,7 +14,8 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:visibility="visible"
-        android:text="@string/tv_Materia" />
+        android:text="@string/tv_Materia"
+        android:id="@+id/disciplinajogo"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,7 +59,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:gravity="end"
-            android:textColor="@color/scoreColor"
+            android:textColor="@android:color/holo_blue_light"
             android:textSize="30sp"
             android:visibility="visible"
             android:text="@string/tv_score" />

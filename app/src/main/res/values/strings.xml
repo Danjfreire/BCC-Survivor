@@ -51,7 +51,7 @@
     <string name="tv_estrelas">1</string>
     <string name="tv_vida">3</string>
     <string name="tv_score">Score:  1000</string>
-    <string name="tv_Perguntas">Texto da questão aqui bla bla bla bla bla</string>
+    <string name="tv_Perguntas"> Questão aqui</string>
     <string name="bt_repostaA">Alternativa A</string>
     <string name="bt_repostaB">Alternativa B</string>
     <string name="bt_repostaC">Alternativa C</string>
