@@ -1,6 +1,9 @@
 package com.ufrpe.bccsurvivor.jogo;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -18,23 +21,14 @@ import java.util.Random;
  * Created by Daniel on 28/11/2017.
  */
 
-public class RankingFragment extends Fragment {
+public class RankingFragment extends ListFragment {
 
     private ArrayList<Player>players;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreate(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_ranking, container, false);
 
-        if(savedInstanceState == null){
-            carregaPlayers();
-        }else{
-            players = savedInstanceState.getParcelableArrayList("lista");
-        }
-
-        ListView ranking = (ListView)view.findViewById(R.id.ranking);
-        AdapterRanking adapter = new AdapterRanking(getActivity(), R.layout.item_ranking,players);
-        ranking.setAdapter(adapter);
 
         return view;
     }
@@ -42,6 +36,27 @@ public class RankingFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        if(savedInstanceState == null){
+            carregaPlayers();
+        }else{
+            players = savedInstanceState.getParcelableArrayList("lista");
+        }
+
+        //ListView ranking = (ListView)view.findViewById(R.id.ranking);
+        AdapterRanking adapter = new AdapterRanking(getActivity(), R.layout.item_ranking,players);
+        setListAdapter(adapter);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Activity activity = getActivity();
+        if (activity instanceof AoClicarNoPlayer) {
+            Player player = (Player) l.getItemAtPosition(position);
+            AoClicarNoPlayer listener = (AoClicarNoPlayer) activity;
+            listener.clicouNoPlayer(player);
+        }
     }
 
     @Override
@@ -58,6 +73,10 @@ public class RankingFragment extends Fragment {
             players.add(new Player("Player"+i,rand.nextInt(1000)));
         }
         Collections.sort(players);
+    }
+
+    public interface AoClicarNoPlayer{
+        void clicouNoPlayer(Player p);
     }
 
 }

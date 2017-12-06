@@ -6,42 +6,6 @@
     tools:context="com.ufrpe.bccsurvivor.jogo.RankingActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:text="@string/tv_Ranking"
-        android:textColor="@android:color/black"
-        android:textAppearance="@android:style/TextAppearance.WindowTitle"
-        android:textSize="24sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="12dp"
-            android:text="@string/tv_Jogador"
-            android:textAppearance="@android:style/TextAppearance.WindowTitle"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="12dp"
-            android:gravity="end"
-            android:text="@string/tv_Pontos"
-            android:textAppearance="@android:style/TextAppearance.WindowTitle"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-    </LinearLayout>
-
     <ListView
         android:id="@+id/ranking"
         android:layout_width="match_parent"
