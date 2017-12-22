@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.ufrpe.bccsurvivor.R;
 
@@ -33,6 +34,7 @@ public class RankingActivity extends AppCompatActivity implements RankingFragmen
     @Override
     public void clicouNoPlayer(Player p) {
         Intent it = new Intent(this, PlayerInfoActivity.class);
+        it.putExtra("player",p);
         startActivity(it);
     }
 }

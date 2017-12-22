@@ -4,13 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.ufrpe.bccsurvivor.jogo.PlayerInfoActivity">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FUNCIOUNOU"
+        android:layout_height="wrap_content"
         android:textSize="40dp"
+        android:textAlignment="textStart"
+        android:layout_margin="15dp"
+        android:id="@+id/tv_player"
+        android:text="Name"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:textAlignment="center"
-        android:gravity="center"/>
+        android:textSize="30dp"
+        android:id="@+id/tv_playerscore"
+        />
+
+
 </LinearLayout>
