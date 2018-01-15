@@ -17,6 +17,36 @@
     <string name="sim">sim</string>
     <string name="nao">não</string>
     <string name="gostou_da_resposta">Gostou da resposta?</string>
+
+
+    <string name="descricao">baner</string>
+    <string name="LNome">Nome</string>
+    <string name="LSenha">Senha</string>
+    <string name="btLogin">Entrar</string>
+    <string name="tv_Materia">Algoritmos</string>
+    <string name="tv_estrelas">1</string>
+    <string name="tv_vida">3</string>
+    <string name="tv_score">Score:  1000</string>
+    <string name="tv_Perguntas"> Questão aqui</string>
+    <string name="bt_repostaA">Alternativa A</string>
+    <string name="bt_repostaB">Alternativa B</string>
+    <string name="bt_repostaC">Alternativa C</string>
+    <string name="bt_repostaD">Alternativa D</string>
+    <string name="bt_repostaE">Alternativa E</string>
+    <string name="tv_Ranking">Classificação</string>
+    <string name="tv_Jogador">Jogador</string>
+    <string name="tv_Pontos">Pontuação</string>
+    <string name="tv_BCC">BCC</string>
+    <string name="tv_Survivor">Survivor</string>
+
+    //fases
+
+    <string name="fase1">Introdução</string>
+    <string name="fase2">Programação I</string>
+    <string name="fase3">Matematica Discreta I</string>
+
+    //disciplinas
+
     <string name="calculo_ni">CÁLCULO NI</string>
     <string name="calculo_nii">CÁLCULO NII</string>
     <string name="introducao_computacao">INTRODUÇÃO A CIÊNCIA DA COMPUTAÇÃO</string>
@@ -43,23 +73,6 @@
     <string name="sis_distr">SISTEMAS DISTRIBUÍDOS</string>
     <string name="sist_oper">SISTEMAS OPERACIONAIS</string>
 
-    <string name="descricao">baner</string>
-    <string name="LNome">Nome</string>
-    <string name="LSenha">Senha</string>
-    <string name="btLogin">Entrar</string>
-    <string name="tv_Materia">Algoritmos</string>
-    <string name="tv_estrelas">1</string>
-    <string name="tv_vida">3</string>
-    <string name="tv_score">Score:  1000</string>
-    <string name="tv_Perguntas"> Questão aqui</string>
-    <string name="bt_repostaA">Alternativa A</string>
-    <string name="bt_repostaB">Alternativa B</string>
-    <string name="bt_repostaC">Alternativa C</string>
-    <string name="bt_repostaD">Alternativa D</string>
-    <string name="bt_repostaE">Alternativa E</string>
-    <string name="tv_Ranking">Classificação</string>
-    <string name="tv_Jogador">Jogador</string>
-    <string name="tv_Pontos">Pontuação</string>
-    <string name="tv_BCC">BCC</string>
-    <string name="tv_Survivor">Survivor</string>
+
+
 </resources>

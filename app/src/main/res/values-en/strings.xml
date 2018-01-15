@@ -17,6 +17,31 @@
     <string name="sim">yes</string>
     <string name="nao">no</string>
     <string name="gostou_da_resposta">Did you like the answer?</string>
+
+
+    <string name="descricao">baner</string>
+    <string name="LNome">Name </string>
+    <string name="LSenha">Password </string>
+    <string name="btLogin">Enter</string>
+    <string name="tv_Materia">Algorithms </string>
+    <string name="tv_estrelas">1</string>
+    <string name="tv_vida">3</string>
+    <string name="tv_score">Score:  1000</string>
+    <string name="tv_Perguntas"> Question here</string>
+    <string name="bt_repostaA">Alternative A</string>
+    <string name="bt_repostaB">Alternative B</string>
+    <string name="bt_repostaC">Alternative C</string>
+    <string name="bt_repostaD">Alternative D</string>
+    <string name="bt_repostaE">Alternative E</string>
+    <string name="tv_Ranking">Leaderboards</string>
+    <string name="tv_Jogador">Player</string>
+    <string name="tv_Pontos">Score</string>
+
+    <string name="fase1">Introduction</string>
+    <string name="fase2">Programming I</string>
+    <string name="fase3">Math I</string>
+
+
     <string name="calculo_ni">CALCULATION NI</string>
     <string name="calculo_nii">CALCULATION NII</string>
     <string name="introducao_computacao">INTRODUCTION TO COMPUTER SCIENCE</string>
@@ -43,21 +68,4 @@
     <string name="sis_distr">DISTRIBUTED SYSTEMS</string>
     <string name="sist_oper">OPERATIONAL SYSTEMS</string>
 
-    <string name="descricao">baner</string>
-    <string name="LNome">Name </string>
-    <string name="LSenha">Password </string>
-    <string name="btLogin">Enter</string>
-    <string name="tv_Materia">Algorithms </string>
-    <string name="tv_estrelas">1</string>
-    <string name="tv_vida">3</string>
-    <string name="tv_score">Score:  1000</string>
-    <string name="tv_Perguntas"> Question here</string>
-    <string name="bt_repostaA">Alternative A</string>
-    <string name="bt_repostaB">Alternative B</string>
-    <string name="bt_repostaC">Alternative C</string>
-    <string name="bt_repostaD">Alternative D</string>
-    <string name="bt_repostaE">Alternative E</string>
-    <string name="tv_Ranking">Leaderboards</string>
-    <string name="tv_Jogador">Player</string>
-    <string name="tv_Pontos">Score</string>
 </resources>

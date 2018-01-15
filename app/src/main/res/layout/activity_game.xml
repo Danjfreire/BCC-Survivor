@@ -14,7 +14,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:visibility="visible"
-        android:text="@string/tv_Materia"
+        android:text=""
         android:id="@+id/disciplinajogo"/>
 
     <LinearLayout
