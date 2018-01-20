@@ -26,7 +26,7 @@
     <string name="tv_Materia">Algoritmos</string>
     <string name="tv_estrelas">1</string>
     <string name="tv_vida">3</string>
-    <string name="tv_score">Score:  1000</string>
+    <string name="tv_score">Pontuaçao: </string>
     <string name="tv_Perguntas"> Questão aqui</string>
     <string name="bt_repostaA">Alternativa A</string>
     <string name="bt_repostaB">Alternativa B</string>

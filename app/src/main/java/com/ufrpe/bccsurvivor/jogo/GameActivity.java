@@ -22,13 +22,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    private TextView tv;
+    private TextView tvDisciplina;
     private LevelController levelControl;
+    private GameController gameControl;
     private RestController restControl;
     private int levelAtual;
+    private List<QuestaoJogo> questoes;
+    private int acertou;
+    private QuestaoJogo questaoAtual;
+    private static Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,26 +42,107 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         if (savedInstanceState != null) {
-            tv = (TextView) findViewById(R.id.disciplinajogo);
-            tv.setText(savedInstanceState.getString("disciplina"));
-        }else{
+            tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
+            tvDisciplina.setText(savedInstanceState.getString("disciplina"));
+        } else {
             levelAtual = 1; //seta na primeira fase
         }
 
-        tv = (TextView) findViewById(R.id.disciplinajogo);
         levelControl = new LevelController();
+        gameControl = new GameController();
+
+        tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
+        tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
+
         restControl = new RestController();
+        restControl.execute();
 
+        final Button altA = (Button) findViewById(R.id.alternativaA);
+        final Button altB = (Button) findViewById(R.id.alternativaB);
+        final Button altC = (Button) findViewById(R.id.alternativaC);
+        final Button altD = (Button) findViewById(R.id.alternativaD);
 
-        tv.setText(levelControl.loadLevel(levelAtual,getApplicationContext()));
-
-        Button btn = (Button) findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
+        altA.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(GameActivity.this, "selecionou alternativa A", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+               verificarResposta(altA);
             }
         });
+
+        altB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verificarResposta(altB);
+            }
+        });
+
+        altC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verificarResposta(altC);
+            }
+        });
+
+        altD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verificarResposta(altD);
+            }
+        });
+
+    }
+
+    private void verificarResposta(Button alt){
+        if(alt.getText().equals(questaoAtual.getResposta())){
+            acertou++;
+            gameControl.aumentarScore(findViewById(R.id.score));
+            if(acertou == 3)
+                levelControl.updateLevel(levelAtual);
+        }else{
+            gameControl.diminuirVida();
+        }
+    }
+
+    private void inserirQuestoes(List<QuestaoJogo> questoes) {
+        this.questoes = new ArrayList<>(questoes);
+        carregarQuestao();
+    }
+
+    private void carregarQuestao() {
+
+        int random = this.random.nextInt(this.questoes.size());
+        QuestaoJogo questao = questoes.get(random);
+        questaoAtual = questao;
+
+        ArrayList<String> alternativas = new ArrayList<>();
+        alternativas.add(questao.getAlternativa1());
+        alternativas.add(questao.getAlternativa2());
+        alternativas.add(questao.getAlternativa3());
+        alternativas.add(questao.getResposta());
+
+        TextView tv = (TextView) findViewById(R.id.questao);
+        tv.setText(questao.getTexto());
+
+        for (int i = 0; i < 4; i++) {
+            random = this.random.nextInt(alternativas.size());
+
+            if (i == 0) {
+                tv = (TextView) findViewById(R.id.alternativaA);
+                tv.setText(alternativas.get(random));
+            } else if (i == 1) {
+                tv = (TextView) findViewById(R.id.alternativaB);
+                tv.setText(alternativas.get(random));
+            } else if (i == 2) {
+                tv = (TextView) findViewById(R.id.alternativaC);
+                tv.setText(alternativas.get(random));
+            } else if (i == 3) {
+                tv = (TextView) findViewById(R.id.alternativaD);
+                tv.setText(alternativas.get(random));
+            }
+            alternativas.remove(random);
+        }
+        questoes.remove(questao);
+
     }
 
     private class RestController extends AsyncTask<String, Void, List<QuestaoJogo>> {
@@ -65,13 +152,13 @@ public class GameActivity extends AppCompatActivity {
 
             URL url = null;
             try {
-                url = new URL(params[0]);
+                url = new URL("http://10.0.2.2:5000/bccsurvivor/disciplina?disciplina=" + tvDisciplina.getText());
                 HttpURLConnection conection = (HttpURLConnection) url.openConnection();
                 Reader reader = new InputStreamReader(conection.getInputStream());
                 Gson gson = new GsonBuilder().create();
-                List<QuestaoJogo> crimes = new ArrayList<>();
-                crimes = Arrays.asList(gson.fromJson(reader, QuestaoJogo[].class));
-                return crimes;
+                List<QuestaoJogo> questoes = new ArrayList<>();
+                questoes = Arrays.asList(gson.fromJson(reader, QuestaoJogo[].class));
+                return questoes;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -81,9 +168,11 @@ public class GameActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(List<QuestaoJogo> crimes) {
+        protected void onPostExecute(List<QuestaoJogo> questoes) {
 
+            inserirQuestoes(questoes);
         }
     }
+
 
 }
