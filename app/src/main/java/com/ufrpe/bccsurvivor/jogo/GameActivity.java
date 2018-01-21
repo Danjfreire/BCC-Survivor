@@ -67,6 +67,8 @@ public class GameActivity extends AppCompatActivity {
         acertou = 0;
         levelAtual++;
         tvDisciplina.setText(levelControl.loadLevel(levelAtual,getApplicationContext()));
+        restControl = new RestController();
+        restControl.execute();
     }
 
     private void loadButtons() {
@@ -74,6 +76,7 @@ public class GameActivity extends AppCompatActivity {
         final Button altB = (Button) findViewById(R.id.alternativaB);
         final Button altC = (Button) findViewById(R.id.alternativaC);
         final Button altD = (Button) findViewById(R.id.alternativaD);
+        final Button btnPular = (Button) findViewById(R.id.btnPular);
 
         altA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +103,13 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 verificarResposta(altD);
+            }
+        });
+
+        btnPular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //pular para proxima questao da disciplina
             }
         });
     }

@@ -1,4 +1,5 @@
 <resources>
+    <string name="loginFailure">Could not Sign in, try again</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -67,5 +68,6 @@
     <string name="proj_desen">SOFTWARE DEVELOPMENT PROJECT</string>
     <string name="sis_distr">DISTRIBUTED SYSTEMS</string>
     <string name="sist_oper">OPERATIONAL SYSTEMS</string>
+    <string name="pular">Jump to next question</string>
 
 </resources>

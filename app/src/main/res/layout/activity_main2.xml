@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ufrpe.bccsurvivor.estudo.MainActivity">
+    tools:context="com.ufrpe.bccsurvivor.MainActivity">
 
     <TextView
         android:layout_width="match_parent"

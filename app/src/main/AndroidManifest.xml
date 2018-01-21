@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".jogo.RankingActivity" />
         <activity android:name=".jogo.GameActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity" />
         <activity android:name=".jogo.PlayerInfoActivity"/>
         <activity
             android:name=".estudo.QuestoesDisciplina"
@@ -37,7 +36,7 @@
             android:name=".estudo.TelaExibicao"/>
         <activity
             android:name=".estudo.TelaExibicaoResposta"/>
-        <activity android:name=".estudo.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

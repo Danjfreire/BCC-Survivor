@@ -7,14 +7,14 @@
     tools:context="com.ufrpe.bccsurvivor.jogo.GameActivity">
 
     <TextView
+        android:id="@+id/disciplinajogo"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
-        android:visibility="visible"
-        android:text=""
-        android:id="@+id/disciplinajogo"/>
+        android:visibility="visible" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,10 +60,10 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
+            android:text="@string/tv_score"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="30sp"
-            android:visibility="visible"
-            android:text="@string/tv_score" />
+            android:visibility="visible" />
 
 
         <TextView
@@ -72,10 +72,10 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
+            android:text="0"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="30sp"
-            android:visibility="visible"
-            android:text="0" />
+            android:visibility="visible" />
 
     </LinearLayout>
 
@@ -105,55 +105,46 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/alternativaA"
                 android:layout_width="match_parent"
-                android:layout_height="41dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/bt_respostas"
                 android:text="@string/bt_repostaA" />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/alternativaB"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/bt_respostas"
                 android:text="@string/bt_repostaB" />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/alternativaC"
                 android:layout_width="match_parent"
-                android:layout_height="39dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/bt_respostas"
                 android:text="@string/bt_repostaC" />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/alternativaD"
                 android:layout_width="match_parent"
-                android:layout_height="39dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/bt_respostas"
                 android:text="@string/bt_repostaD" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/btnPular"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bt_respostas"
+                android:text="@string/pular" />
 
         </LinearLayout>
     </FrameLayout>

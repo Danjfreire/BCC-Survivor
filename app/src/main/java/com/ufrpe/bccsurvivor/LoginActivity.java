@@ -8,32 +8,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.ufrpe.bccsurvivor.jogo.QuestaoJogo;
 import com.ufrpe.bccsurvivor.jogo.Usuario;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 /**
  * Created by Raylison-WindowsN on 27/11/2017.
@@ -111,7 +99,6 @@ public class LoginActivity extends AppCompatActivity {
                 Reader reader = new InputStreamReader(conection.getInputStream());
                 Gson gson = new GsonBuilder().create();
                 Usuario user = gson.fromJson(reader, Usuario.class);
-                Log.v("Resultado", user.getLogin());
                 return user;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -125,9 +112,18 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Usuario user) {
             if (user != null) {
-                Intent myintent = new Intent(LoginActivity.this, com.ufrpe.bccsurvivor.estudo.MainActivity.class);
+                Intent myintent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(myintent);
+            } else {
+                Log.v("Tag", "Entrou");
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.loginFailure), Toast.LENGTH_LONG).show();
+                failedLogin();
             }
         }
+    }
+
+    private void failedLogin() {
+        this.restController = new RestController();
+
     }
 }
