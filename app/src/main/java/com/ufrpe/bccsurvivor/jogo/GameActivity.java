@@ -57,6 +57,19 @@ public class GameActivity extends AppCompatActivity {
         restControl = new RestController();
         restControl.execute();
 
+        loadButtons();
+
+    }
+
+    private void atualizarFase(){
+        //fazer alguma animação
+        //recarregar questoes
+        acertou = 0;
+        levelAtual++;
+        tvDisciplina.setText(levelControl.loadLevel(levelAtual,getApplicationContext()));
+    }
+
+    private void loadButtons() {
         final Button altA = (Button) findViewById(R.id.alternativaA);
         final Button altB = (Button) findViewById(R.id.alternativaB);
         final Button altC = (Button) findViewById(R.id.alternativaC);
@@ -65,7 +78,7 @@ public class GameActivity extends AppCompatActivity {
         altA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               verificarResposta(altA);
+                verificarResposta(altA);
             }
         });
 
@@ -89,17 +102,19 @@ public class GameActivity extends AppCompatActivity {
                 verificarResposta(altD);
             }
         });
-
     }
 
-    private void verificarResposta(Button alt){
-        if(alt.getText().equals(questaoAtual.getResposta())){
+    private void verificarResposta(Button alt) {
+        if (alt.getText().equals(questaoAtual.getResposta())) {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
-            if(acertou == 3)
-                levelControl.updateLevel(levelAtual);
-        }else{
-            gameControl.diminuirVida();
+            if (acertou == 1) //mudar para 3
+                atualizarFase();
+        } else {
+            gameControl.diminuirVida(findViewById(R.id.vidas));
+            if (gameControl.getNumVidas() == 0) {
+                //perdeu, criar tela de derrota
+            }
         }
     }
 

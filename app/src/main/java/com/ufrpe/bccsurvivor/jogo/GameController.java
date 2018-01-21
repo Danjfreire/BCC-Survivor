@@ -12,6 +12,14 @@ import com.ufrpe.bccsurvivor.R;
  */
 
 class GameController {
+
+
+    private int numVidas;
+
+    public int getNumVidas() {
+        return numVidas;
+    }
+
     public void aumentarScore(View tvScore) {
         TextView score = (TextView) tvScore;
         int scoreAtual = Integer.parseInt(score.getText().toString());
@@ -20,7 +28,13 @@ class GameController {
         score.setText(String.valueOf(scoreAtual));
     }
 
-    public void diminuirVida() {
+    public void diminuirVida(View tvVidas) {
+        TextView vidas = (TextView) tvVidas;
+        numVidas = Integer.parseInt(vidas.getText().toString());
+        numVidas--;
 
+        vidas.setText(String.valueOf(numVidas));
     }
+
+
 }
