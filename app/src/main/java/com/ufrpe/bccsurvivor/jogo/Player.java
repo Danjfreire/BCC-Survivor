@@ -2,6 +2,7 @@ package com.ufrpe.bccsurvivor.jogo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 /**
  * Created by Daniel on 25/11/2017.
@@ -9,24 +10,19 @@ import android.os.Parcelable;
 
 public class Player implements Comparable<Player>, Parcelable {
 
+    private int id;
+
     private String nickname;
     private Integer faseAtual;
     private Integer numVidas;
     private Integer pulos;
     private Integer score;
     private Integer scoreRecorde;
+//    public Player(String nickname, int score, int faseAtual, int numVidas, int pulos, int scoreRecorde) {
 
-
-    public Player(String nickname, int score) {
-        this.nickname = nickname;
-        this.score = score;
-        this.faseAtual = faseAtual;
-        this.numVidas = numVidas;
-        this.pulos = pulos;
-        this.scoreRecorde = scoreRecorde;
-    }
 
     public Player(Parcel parcel) {
+        this.id = parcel.readInt();
         this.nickname = parcel.readString();
         this.score = parcel.readInt();
         this.scoreRecorde = parcel.readInt();
@@ -46,6 +42,21 @@ public class Player implements Comparable<Player>, Parcelable {
             return new Player[size];
         }
     };
+
+    //    }
+//        this.scoreRecorde = scoreRecorde;
+//        this.pulos = pulos;
+//        this.numVidas = numVidas;
+//        this.faseAtual = faseAtual;
+//        this.score = score;
+//        this.nickname = nickname;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getScore() {
         return score;
@@ -116,6 +127,7 @@ public class Player implements Comparable<Player>, Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(nickname);
         dest.writeInt(score);
         dest.writeInt(scoreRecorde);

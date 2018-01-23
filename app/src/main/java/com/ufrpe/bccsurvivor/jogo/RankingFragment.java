@@ -70,7 +70,7 @@ public class RankingFragment extends ListFragment {
         Random rand = new Random();
 
         for(int i = 1; i<=100;i++){
-            players.add(new Player("Player"+i,rand.nextInt(1000)));
+            //players.add(new Player("Player"+i,rand.nextInt(1000)));
         }
         Collections.sort(players);
     }

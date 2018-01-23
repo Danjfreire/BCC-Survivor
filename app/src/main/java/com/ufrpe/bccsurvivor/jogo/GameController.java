@@ -49,4 +49,12 @@ class GameController {
     public int getNumPulos() {
         return numPulos;
     }
+
+    public void setNumVidas(Integer numVidas) {
+        this.numVidas = numVidas;
+    }
+
+    public void setNumPulos(Integer numPulos) {
+        this.numPulos = numPulos;
+    }
 }

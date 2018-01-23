@@ -1,5 +1,6 @@
 package com.ufrpe.bccsurvivor.jogo;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 public class GameActivity extends AppCompatActivity {
 
     private TextView tvDisciplina;
@@ -42,15 +49,21 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        if (savedInstanceState != null) {
-            tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
-            tvDisciplina.setText(savedInstanceState.getString("disciplina"));
-        } else {
-            levelAtual = 1; //seta na primeira fase
-        }
-
         levelControl = new LevelController();
         gameControl = new GameController();
+
+        Intent intent = getIntent();
+        player = (Player) intent.getParcelableExtra("player");
+        tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
+        levelAtual = player.getFaseAtual();
+        gameControl.setNumVidas(player.getNumVidas());
+        gameControl.setNumPulos(player.getPulos());
+        gameControl.setScore(player.getScore());
+
+        //if (savedInstanceState != null) {
+        //} else {
+        //    levelAtual = 1; //seta na primeira fase
+        //}
 
         tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
         tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
@@ -208,8 +221,52 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        Log.v("STOP","ENTROU NO ONSTOP");
+        player.setScoreRecorde(5000);
+        StateController stateC = new StateController();
+        stateC.execute(player);
         super.onStop();
-        //salvar estado do player
-
     }
+
+    private class StateController extends AsyncTask<Player, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Player... params) {
+
+            OkHttpClient client = new OkHttpClient();
+
+            Gson gson = new GsonBuilder().create();
+
+            RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),gson.toJson(params[0],Player.class));
+            Log.v("json",gson.toJson(params[0],Player.class));
+            Request request = new Request.Builder()
+                    .url("http://10.0.2.2:5000/user/savestate")
+                    .post(body)
+                    .build();
+
+            try {
+                Response response = client.newCall(request).execute();
+                Log.v("Response",response.body().toString());
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                Response response = client.newCall(request).execute();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+    }
+
 }
