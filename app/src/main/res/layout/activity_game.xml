@@ -21,7 +21,7 @@
         android:layout_height="40dp">
 
         <TextView
-            android:id="@+id/Pulos"
+            android:id="@+id/pulos"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
@@ -110,40 +110,50 @@
                 android:id="@+id/alternativaA"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/bt_respostas"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/btn_red"
                 android:text="@string/bt_repostaA" />
 
             <Button
                 android:id="@+id/alternativaB"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/bt_respostas"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/btn_green"
                 android:text="@string/bt_repostaB" />
 
             <Button
                 android:id="@+id/alternativaC"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/bt_respostas"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/btn_orange"
                 android:text="@string/bt_repostaC" />
 
             <Button
                 android:id="@+id/alternativaD"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/bt_respostas"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/btn_blue"
                 android:text="@string/bt_repostaD" />
 
             <Button
                 android:id="@+id/btnPular"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/bt_respostas"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/btn_yellow"
                 android:text="@string/pular" />
 
         </LinearLayout>

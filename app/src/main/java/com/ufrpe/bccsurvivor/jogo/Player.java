@@ -7,20 +7,32 @@ import android.os.Parcelable;
  * Created by Daniel on 25/11/2017.
  */
 
-public class Player implements Comparable<Player> ,Parcelable{
+public class Player implements Comparable<Player>, Parcelable {
 
     private String nickname;
-    private int score;
+    private Integer faseAtual;
+    private Integer numVidas;
+    private Integer pulos;
+    private Integer score;
+    private Integer scoreRecorde;
 
 
-    public Player(String nickname, int score){
+    public Player(String nickname, int score) {
         this.nickname = nickname;
         this.score = score;
+        this.faseAtual = faseAtual;
+        this.numVidas = numVidas;
+        this.pulos = pulos;
+        this.scoreRecorde = scoreRecorde;
     }
 
-    public Player(Parcel parcel){
+    public Player(Parcel parcel) {
         this.nickname = parcel.readString();
         this.score = parcel.readInt();
+        this.scoreRecorde = parcel.readInt();
+        this.pulos = parcel.readInt();
+        this.numVidas = parcel.readInt();
+        this.faseAtual = parcel.readInt();
     }
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {
@@ -45,15 +57,54 @@ public class Player implements Comparable<Player> ,Parcelable{
 
     @Override
     public String toString() {
-        return nickname + " - "+ score;
+        return nickname + " - " + score;
     }
 
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public Integer getFaseAtual() {
+        return faseAtual;
+    }
+
+    public void setFaseAtual(Integer faseAtual) {
+        this.faseAtual = faseAtual;
+    }
+
+    public Integer getNumVidas() {
+        return numVidas;
+    }
+
+    public void setNumVidas(Integer numVidas) {
+        this.numVidas = numVidas;
+    }
+
+    public Integer getPulos() {
+        return pulos;
+    }
+
+    public void setPulos(Integer pulos) {
+        this.pulos = pulos;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getScoreRecorde() {
+        return scoreRecorde;
+    }
+
+    public void setScoreRecorde(Integer scoreRecorde) {
+        this.scoreRecorde = scoreRecorde;
+    }
 
     @Override
     public int compareTo(Player o) {
-        if(this.score < o.getScore())
+        if (this.scoreRecorde < o.getScoreRecorde())
             return 1;
-        if(this.score > o.getScore())
+        if (this.scoreRecorde > o.getScoreRecorde())
             return -1;
         return 0;
     }
@@ -67,5 +118,9 @@ public class Player implements Comparable<Player> ,Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nickname);
         dest.writeInt(score);
+        dest.writeInt(scoreRecorde);
+        dest.writeInt(pulos);
+        dest.writeInt(numVidas);
+        dest.writeInt(faseAtual);
     }
 }

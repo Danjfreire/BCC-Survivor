@@ -14,7 +14,8 @@ import com.ufrpe.bccsurvivor.R;
 class GameController {
 
 
-    private int numVidas;
+    private int numVidas = 3;
+    private int numPulos = 1;
 
     public int getNumVidas() {
         return numVidas;
@@ -37,4 +38,15 @@ class GameController {
     }
 
 
+    public void diminuirPulos(View tvPulos) {
+        TextView pulos = (TextView) tvPulos;
+        numPulos = Integer.parseInt(pulos.getText().toString());
+        numPulos--;
+
+        pulos.setText(String.valueOf(numPulos));
+    }
+
+    public int getNumPulos() {
+        return numPulos;
+    }
 }

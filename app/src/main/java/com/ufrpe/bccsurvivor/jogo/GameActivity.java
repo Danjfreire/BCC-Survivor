@@ -35,6 +35,7 @@ public class GameActivity extends AppCompatActivity {
     private int acertou;
     private QuestaoJogo questaoAtual;
     private static Random random = new Random();
+    private Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +62,12 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    private void atualizarFase(){
+    private void atualizarFase() {
         //fazer alguma animação
         //recarregar questoes
         acertou = 0;
         levelAtual++;
-        tvDisciplina.setText(levelControl.loadLevel(levelAtual,getApplicationContext()));
+        tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
         restControl = new RestController();
         restControl.execute();
     }
@@ -110,6 +111,11 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //pular para proxima questao da disciplina
+                if (gameControl.getNumPulos() > 0) {
+                    carregarQuestao();
+                    gameControl.diminuirPulos(findViewById(R.id.pulos));
+                }else
+                    Toast.makeText(GameActivity.this, "Não possui pulos restante", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -200,4 +206,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //salvar estado do player
+
+    }
 }
