@@ -27,30 +27,13 @@ public class MostrarQuestoes extends AppCompatActivity {
         toolbarTextView.setVisibility(View.VISIBLE);
         toolbarTextView.setText(titulo);
 
-        ListaQuestoes l = new ListaQuestoes(this);
-
-        ListView listaQuestoes = (ListView) findViewById(R.id.listaQuestoes);
-        listaQuestoes.setAdapter(l);
-
-        ImageView imgIcon = (ImageView) findViewById(R.id.imageView);
+        ImageView imgIcon = (ImageView) findViewById(R.id.botaoCriar);
 
         imgIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MostrarQuestoes.this, CriarPergunta.class);
                 i.putExtra("disciplina", ((TextView)findViewById(R.id.textView)).getText());
-                startActivity(i);
-            }
-        });
-
-        listaQuestoes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(MostrarQuestoes.this,TelaExibicao.class);
-                TextView titulo = (TextView) view.findViewById(R.id.tituloItem);
-                TextView subTitulo = (TextView) findViewById(R.id.textView);
-                i.putExtra("titulo", titulo.getText());
-                i.putExtra("subtitulo", subTitulo.getText());
                 startActivity(i);
             }
         });

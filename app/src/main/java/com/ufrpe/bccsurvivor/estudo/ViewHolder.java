@@ -3,7 +3,6 @@ package com.ufrpe.bccsurvivor.estudo;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.ufrpe.bccsurvivor.R;
 
 /**

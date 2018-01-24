@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="60dp">
             <TextView
                 android:id="@+id/tituloExibicao"
                 android:layout_gravity="center_vertical"
@@ -28,68 +25,72 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
-    </android.support.v7.widget.Toolbar>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pergunta"/>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="400dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </ScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-                <Button
-                    android:id="@+id/respostaBotao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="@string/resposta"/>
-            </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/pergunta"/>
+            <TextView
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"/>
             <LinearLayout
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:gravity="right"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/gostou_da_pergunta"/>
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/respostaBotao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/resposta"/>
+                </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+                    <TextView
+                        android:gravity="right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gostou_da_pergunta"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                        </LinearLayout>
+                        <Button
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:text="@string/sim">
+                        </Button>
+                        <Button
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="right"
+                            android:text="@string/nao">
+                        </Button>
                     </LinearLayout>
-                    <Button
-                        android:layout_width="70dp"
-                        android:layout_height="40dp"
-                        android:text="@string/sim">
-                    </Button>
-                    <Button
-                        android:layout_width="70dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="right"
-                        android:text="@string/nao">
-                    </Button>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>

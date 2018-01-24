@@ -58,7 +58,7 @@ public class GameActivity extends AppCompatActivity {
         levelAtual = player.getFaseAtual();
         gameControl.setNumVidas(player.getNumVidas());
         gameControl.setNumPulos(player.getPulos());
-        gameControl.setScore(player.getScore());
+        //gameControl.setScore(player.getScore());
 
         //if (savedInstanceState != null) {
         //} else {

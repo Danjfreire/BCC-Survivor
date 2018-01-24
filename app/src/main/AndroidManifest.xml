@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
+        <activity android:name=".estudo.QuestoesDisciplina" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         <activity android:name=".jogo.GameActivity" android:screenOrientation="portrait"/>
         <activity android:name=".jogo.PlayerInfoActivity"/>
         <activity
-            android:name=".estudo.QuestoesDisciplina"
+            android:name=".LoginActivity" android:screenOrientation="portrait"
             android:theme="@style/AppThemeQ">
         </activity>
         <activity

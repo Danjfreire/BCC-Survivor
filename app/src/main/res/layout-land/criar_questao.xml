@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:foregroundGravity="center"
+    android:background="@color/questionBackgroud">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,26 +20,30 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:paddingLeft="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/disciplina"/>
             <TextView
                 android:id="@+id/textDisciplina"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingLeft="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:paddingLeft="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/assunto"/>
             <EditText
                 android:id="@+id/editAssunto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingLeft="16dp"/>
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -44,7 +51,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/criar"
+                    android:background="@drawable/ic_done_grey600_36dp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"/>
             </RelativeLayout>
@@ -58,26 +65,24 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:paddingLeft="16dp"
                 android:gravity="center_vertical"
                 android:text="@string/pergunta_obrigat_rio"/>
             <TextView
                 android:id="@+id/pergunta"
                 android:layout_width="match_parent"
-                android:background="@color/colorYellow"
-                android:paddingLeft="16dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginEnd="8dp"
                 android:layout_height="100dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:paddingLeft="16dp"
                 android:gravity="center_vertical"
                 android:text="@string/resposta"/>
             <TextView
                 android:id="@+id/resposta"
                 android:layout_width="match_parent"
-                android:background="@color/colorYellow"
-                android:paddingLeft="16dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginEnd="8dp"
                 android:layout_height="100dp" />
         </LinearLayout>
     </LinearLayout>
