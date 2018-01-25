@@ -85,6 +85,10 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="sugerirCadastro">Não possui cadastro ainda?</string>
     <string name="hintCadastroEmail">Informe seu email</string>
+    <string name="camposIncompletos">Preencha todos os campos</string>
+    <string name="falhaCadastroSenha">A senha e confirmação devem ser iguais</string>
+    <string name="sucessoCadastro">Cadastro efetuado com sucesso, efetue login</string>
+    <string name="falhaCadastro">Ocorreu uma falha no cadastro, tente novamente</string>
 
 
 </resources>

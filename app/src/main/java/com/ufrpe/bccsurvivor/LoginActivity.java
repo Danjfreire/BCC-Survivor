@@ -59,41 +59,15 @@ public class LoginActivity extends AppCompatActivity {
 
                 String dados[] = new String[2];
                 dados[0] = editLogin.getText().toString();
-                dados[1] = md5(editSenha.getText().toString());
+                dados[1] = Encrypter.getInstance().md5(editSenha.getText().toString());
                 Log.v("Senha", dados[1]);
 
                 restController.execute(dados);
-
 
             }
         });
     }
 
-    private String md5(String s) {
-        final String MD5 = "MD5";
-        try {
-            // Create MD5 Hash
-            MessageDigest digest = java.security.MessageDigest
-                    .getInstance(MD5);
-            digest.update(s.getBytes());
-            byte messageDigest[] = digest.digest();
-
-            // Create Hex String
-            StringBuilder hexString = new StringBuilder();
-            for (byte aMessageDigest : messageDigest) {
-                String h = Integer.toHexString(0xFF & aMessageDigest);
-                while (h.length() < 2)
-                    h = "0" + h;
-                hexString.append(h);
-            }
-            return hexString.toString();
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return "";
-
-    }
 
     private class RestController extends AsyncTask<String[], Void, Player> {
 
@@ -123,8 +97,8 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Player player) {
             if (player.getNickname() != null) {
                 Intent myintent = new Intent(LoginActivity.this, MainActivity.class);
-                Log.v("ToMenu",player.getNickname());
-                myintent.putExtra("player",player);
+                Log.v("ToMenu", player.getNickname());
+                myintent.putExtra("player", player);
                 startActivity(myintent);
             } else {
                 Log.v("Tag", "Entrou");
