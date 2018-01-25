@@ -12,6 +12,7 @@ import com.ufrpe.bccsurvivor.estudo.QuestoesDisciplina;
 import com.ufrpe.bccsurvivor.jogo.GameActivity;
 import com.ufrpe.bccsurvivor.jogo.Player;
 import com.ufrpe.bccsurvivor.jogo.RankingActivity;
+import com.ufrpe.bccsurvivor.jogo.StartGameActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         botaoJogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent = new Intent(MainActivity.this, GameActivity.class);
+                Intent myintent = new Intent(MainActivity.this, StartGameActivity.class);
                 myintent.putExtra("player",playerLogado);
                 startActivity(myintent);
             }

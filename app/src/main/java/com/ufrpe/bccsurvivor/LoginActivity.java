@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             URL url = null;
             try {
                 String dados[] = params[0];
-                url = new URL("http://192.168.56.103:5000/user/login?login=" + dados[0] + "&senha=" + dados[1]);
+                url = new URL("http://10.0.2.2:5000/user/login?login=" + dados[0] + "&senha=" + dados[1]);
                 HttpURLConnection conection = (HttpURLConnection) url.openConnection();
                 Reader reader = new InputStreamReader(conection.getInputStream());
                 Gson gson = new GsonBuilder().create();

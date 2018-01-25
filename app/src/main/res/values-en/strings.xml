@@ -69,5 +69,8 @@
     <string name="sis_distr">DISTRIBUTED SYSTEMS</string>
     <string name="sist_oper">OPERATIONAL SYSTEMS</string>
     <string name="pular">Jump to next question</string>
+    <string name="starGame">Game Mode</string>
+    <string name="Continue">Continue</string>
+    <string name="new_game">New Game</string>
 
 </resources>

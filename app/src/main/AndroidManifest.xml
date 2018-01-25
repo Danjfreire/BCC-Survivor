@@ -11,32 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".estudo.QuestoesDisciplina" >
+        <activity android:name=".estudo.QuestoesDisciplina" />
+        <activity android:name=".jogo.RankingActivity" />
+        <activity
+            android:name=".jogo.GameActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".jogo.PlayerInfoActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".jogo.RankingActivity" />
-        <activity android:name=".jogo.GameActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".jogo.PlayerInfoActivity"/>
-        <activity
-            android:name=".LoginActivity" android:screenOrientation="portrait"
-            android:theme="@style/AppThemeQ">
-        </activity>
         <activity
             android:name=".estudo.MostrarQuestoes"
-            android:theme="@style/AppThemeQ">
-        </activity>
+            android:theme="@style/AppThemeQ"></activity>
         <activity
             android:name=".estudo.CriarPergunta"
-            android:theme="@style/AppThemeQ"/>
+            android:theme="@style/AppThemeQ" />
+        <activity android:name=".estudo.TelaExibicao" />
+        <activity android:name=".estudo.TelaExibicaoResposta" />
         <activity
-            android:name=".estudo.TelaExibicao"/>
-        <activity
-            android:name=".estudo.TelaExibicaoResposta"/>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".jogo.StartGameActivity"></activity>
     </application>
 
 </manifest>
