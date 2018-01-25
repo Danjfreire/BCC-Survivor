@@ -28,7 +28,7 @@
         </activity>
         <activity
             android:name=".estudo.MostrarQuestoes"
-            android:theme="@style/AppThemeQ"></activity>
+            android:theme="@style/AppThemeQ" />
         <activity
             android:name=".estudo.CriarPergunta"
             android:theme="@style/AppThemeQ" />
@@ -37,7 +37,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".jogo.StartGameActivity"></activity>
+        <activity android:name=".jogo.StartGameActivity" />
+        <activity android:name=".CadastroActivity"></activity>
     </application>
 
 </manifest>

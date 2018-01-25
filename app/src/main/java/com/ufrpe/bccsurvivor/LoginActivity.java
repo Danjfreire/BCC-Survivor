@@ -40,6 +40,15 @@ public class LoginActivity extends AppCompatActivity {
 
         restController = new RestController();
 
+        Button btnCadastrar = (Button) findViewById(R.id.btn_entrarCadastro);
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
+                startActivity(i);
+            }
+        });
+
         Button btnLogin = (Button) findViewById(R.id.btnLogar);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
