@@ -12,9 +12,6 @@ import com.ufrpe.bccsurvivor.R;
 
 public class LevelController {
 
-    private String faseAtual;
-
-
     public String loadLevel(int level, Context context) {
         String levelName = "";
         switch (level) {
@@ -25,10 +22,6 @@ public class LevelController {
         }
 
         return levelName;
-    }
-
-    public void updateLevel(int levelAtual) {
-        //procurar a proxima fase e atualizar e setar faseAtual
     }
 
 }

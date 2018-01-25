@@ -34,23 +34,28 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="199dp"
             android:fontFamily="@font/adobe"
+=======
+            android:layout_height="wrap_content"
+>>>>>>> 532ea5ebe063953f07d6e4fcfa107270dc3bc346
             android:text="@string/tv_Survivor"
             android:textAlignment="center"
             android:textColor="@color/morphable"
             android:textSize="70sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editLogin"
             android:layout_width="match_parent"
             android:layout_height="78dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="@string/LNome"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editSenha"
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:ems="10"
@@ -58,13 +63,35 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnLogar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+<<<<<<< HEAD
             android:background="@drawable/btlsenha"
             android:backgroundTint="@color/questionBackgroud"
             android:text="@string/btLogin"
             android:textColor="@android:color/holo_blue_dark" />
+=======
+            android:background="@drawable/btn_blue_effect"
+            android:text="@string/btLogin" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textAlignment="center"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="60dp"
+            android:gravity="center_vertical"
+            android:text="@string/sugerirCadastro"/>
+        <Button
+            android:id="@+id/btn_entrarCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:text="@string/cadastrar"
+            android:background="@drawable/btn_blue_effect"/>
+>>>>>>> 532ea5ebe063953f07d6e4fcfa107270dc3bc346
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

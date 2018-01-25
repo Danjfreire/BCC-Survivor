@@ -1,52 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@id/relativeLayout">
-
-
-    <Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@android:color/darker_gray"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/new_question"/>
-
+            android:layout_height="60dp">
             <TextView
                 android:id="@+id/textView"
+                android:textSize="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_toStartOf="@+id/imageView"
-                android:gravity="center_vertical"
-                android:visibility="gone" />
-        </RelativeLayout>
-    </Toolbar>
-    <ListView
-        android:id="@+id/listaQuestoes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"></ListView>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"/>
+            <ImageView
+                 android:id="@+id/botaoCriar"
+                 android:layout_width="40dp"
+                 android:layout_height="40dp"
+                 android:tint="#777777"
+                 android:layout_gravity="center_vertical"
+                 android:src="@drawable/new_question"/>
+        </LinearLayout>
+        <fragment
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:id="@+id/fragmentoMostrarQuestoes"
+            android:name="com.ufrpe.bccsurvivor.estudo.ListaFragmento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></fragment>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

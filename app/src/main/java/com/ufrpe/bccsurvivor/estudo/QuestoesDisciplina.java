@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
-
 import com.ufrpe.bccsurvivor.R;
 
 /**
@@ -50,14 +49,14 @@ public class QuestoesDisciplina extends AppCompatActivity {
 
         ListaDisciplinas l = new ListaDisciplinas(this,disciplinas);
 
-        GridView gradeQuestoes = (GridView) findViewById(R.id.gridView);
+        ListView gradeQuestoes = (ListView) findViewById(R.id.listView);
         gradeQuestoes.setAdapter(l);
 
         gradeQuestoes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 Intent myIntent = new Intent(QuestoesDisciplina.this, MostrarQuestoes.class);
-                myIntent.putExtra("titulo", ((TextView)v).getText());
+                myIntent.putExtra("titulo", ((TextView)v.findViewById(R.id.itemDisciplina)).getText());
                 startActivity(myIntent);
             }
         });

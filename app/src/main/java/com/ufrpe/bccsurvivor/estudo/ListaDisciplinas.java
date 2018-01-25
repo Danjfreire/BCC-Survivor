@@ -2,11 +2,14 @@ package com.ufrpe.bccsurvivor.estudo;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ufrpe.bccsurvivor.R;
 
 /**
  * Created by wallace on 21/11/2017.
@@ -41,11 +44,12 @@ public class ListaDisciplinas extends BaseAdapter {
         View v;
         ViewHolder2 h;
         if (view == null) {
-            v = new TextView(context);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inflater.inflate(R.layout.item_disciplina, viewGroup, false);
             h = new ViewHolder2(v);
             v.setTag(h);
         } else {
-            v = (TextView) view;
+            v = view;
             h =(ViewHolder2) v.getTag();
         }
         h.titulo.setText(disciplinas[i]);
