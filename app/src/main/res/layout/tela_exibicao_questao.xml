@@ -7,7 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/questionBackgroud">
         <LinearLayout
             android:orientation="vertical"
             android:layout_marginEnd="8dp"
@@ -17,10 +18,12 @@
             <TextView
                 android:id="@+id/tituloExibicao"
                 android:layout_gravity="center_vertical"
+                android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/subTituloExicao"
+                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"/>
@@ -29,6 +32,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
@@ -37,15 +41,18 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/pergunta"/>
             <TextView
+                android:id="@+id/conteudoExibicao"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"/>
             <LinearLayout
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:orientation="horizontal">
                 <RelativeLayout
                     android:layout_width="wrap_content"

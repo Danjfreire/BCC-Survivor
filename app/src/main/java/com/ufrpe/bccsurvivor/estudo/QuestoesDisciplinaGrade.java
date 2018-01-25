@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.TextView;
 import com.ufrpe.bccsurvivor.R;
 
@@ -13,7 +13,7 @@ import com.ufrpe.bccsurvivor.R;
  * Created by wallace on 20/11/2017.
  */
 
-public class QuestoesDisciplina extends AppCompatActivity {
+public class QuestoesDisciplinaGrade extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,17 +45,17 @@ public class QuestoesDisciplina extends AppCompatActivity {
                 getString(R.string.sist_oper)};
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.questoes_disciplina);
+        setContentView(R.layout.questoes_disciplina_grade);
 
         ListaDisciplinas l = new ListaDisciplinas(this,disciplinas);
 
-        ListView gradeQuestoes = (ListView) findViewById(R.id.listView);
+        GridView gradeQuestoes = (GridView) findViewById(R.id.gridView);
         gradeQuestoes.setAdapter(l);
 
         gradeQuestoes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Intent myIntent = new Intent(QuestoesDisciplina.this, MostrarQuestoes.class);
+                Intent myIntent = new Intent(QuestoesDisciplinaGrade.this, MostrarQuestoes.class);
                 myIntent.putExtra("titulo", ((TextView)v.findViewById(R.id.itemDisciplina)).getText());
                 startActivity(myIntent);
             }
