@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ufrpe.bccsurvivor.jogo.GameOverActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/game_over" />
+
+
+    <TextView
+        android:id="@+id/tv_newrecord"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:background="@drawable/btn_yellow_effect"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="0"
+            android:text="@string/tv_score"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_scoreFinal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="25dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_backToMenu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:text="MENU"
+        android:background="@drawable/btn_blue_effect"
+        />
+
+    <Button
+        android:id="@+id/btn_playAgain"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:text="@string/playAgain"
+        android:background="@drawable/btn_red_effect"
+        />
+
+</LinearLayout>

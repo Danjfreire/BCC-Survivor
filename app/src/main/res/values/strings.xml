@@ -27,7 +27,7 @@
     <string name="tv_Materia">Algoritmos</string>
     <string name="tv_estrelas">1</string>
     <string name="tv_vida">3</string>
-    <string name="tv_score">Pontuaçao: </string>
+    <string name="tv_score">Pontuação: </string>
     <string name="tv_Perguntas"> Questão aqui</string>
     <string name="bt_repostaA">Alternativa A</string>
     <string name="bt_repostaB">Alternativa B</string>
@@ -89,6 +89,7 @@
     <string name="falhaCadastroSenha">A senha e confirmação devem ser iguais</string>
     <string name="sucessoCadastro">Cadastro efetuado com sucesso, efetue login</string>
     <string name="falhaCadastro">Ocorreu uma falha no cadastro, tente novamente</string>
+    <string name="playAgain">Jogar Novamente</string>
 
 
 </resources>

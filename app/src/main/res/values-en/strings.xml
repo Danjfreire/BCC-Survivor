@@ -84,5 +84,6 @@
     <string name="camposIncompletos">Preencha todos os campos</string>
     <string name="sucessoCadastro">Cadastro efetuado com sucesso, efetue login</string>
     <string name="falhaCadastro">Ocorreu uma falha no cadastro, tente novamente</string>
+    <string name="playAgain">Play Again</string>
 
 </resources>
