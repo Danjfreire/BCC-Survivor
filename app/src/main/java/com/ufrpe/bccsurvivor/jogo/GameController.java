@@ -11,7 +11,7 @@ import com.ufrpe.bccsurvivor.R;
  * Created by Dan on 20/01/2018.
  */
 
-class GameController {
+public class GameController {
 
 
     private int numVidas = 3;
@@ -57,4 +57,6 @@ class GameController {
     public void setNumPulos(Integer numPulos) {
         this.numPulos = numPulos;
     }
+
+
 }

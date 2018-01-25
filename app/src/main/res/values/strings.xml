@@ -74,6 +74,17 @@
     <string name="sis_distr">SISTEMAS DISTRIBUÍDOS</string>
     <string name="sist_oper">SISTEMAS OPERACIONAIS</string>
     <string name="pular">Pular essa questão</string>
+    <string name="starGame">Modo jogo</string>
+    <string name="Continue">Continue</string>
+    <string name="new_game">Novo Jogo</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="hintCadastroLogin">Escolha um login</string>
+    <string name="hintCadastroSenha">Escolha uma senha</string>
+    <string name="hintConfirmSenha">Confirme a senha</string>
+    <string name="hintCadastroNick">Escolha um nickname</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="sugerirCadastro">Não possui cadastro ainda?</string>
+    <string name="hintCadastroEmail">Informe seu email</string>
 
 
 </resources>
