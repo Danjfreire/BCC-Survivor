@@ -13,6 +13,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/login_bg2"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,16 +24,25 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="85dp"
+            android:fontFamily="@font/adobe"
             android:text="@string/tv_BCC"
             android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/morphable"
             android:textSize="50sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
+<<<<<<< HEAD
+            android:layout_height="199dp"
+            android:fontFamily="@font/adobe"
+=======
             android:layout_height="wrap_content"
+>>>>>>> 532ea5ebe063953f07d6e4fcfa107270dc3bc346
             android:text="@string/tv_Survivor"
             android:textAlignment="center"
+            android:textColor="@color/morphable"
             android:textSize="70sp" />
 
         <EditText
@@ -56,6 +66,12 @@
             android:id="@+id/btnLogar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+<<<<<<< HEAD
+            android:background="@drawable/btlsenha"
+            android:backgroundTint="@color/questionBackgroud"
+            android:text="@string/btLogin"
+            android:textColor="@android:color/holo_blue_dark" />
+=======
             android:background="@drawable/btn_blue_effect"
             android:text="@string/btLogin" />
         <TextView
@@ -75,6 +91,7 @@
             android:layout_marginRight="100dp"
             android:text="@string/cadastrar"
             android:background="@drawable/btn_blue_effect"/>
+>>>>>>> 532ea5ebe063953f07d6e4fcfa107270dc3bc346
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -37,6 +37,8 @@
     <string name="tv_Ranking">Leaderboards</string>
     <string name="tv_Jogador">Player</string>
     <string name="tv_Pontos">Score</string>
+    <string name="tv_BCC">BCC</string>
+    <string name="tv_Survivor">Survivor</string>
 
     <string name="fase1">Introduction</string>
     <string name="fase2">Programming I</string>

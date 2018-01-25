@@ -2,22 +2,134 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.1"
-        sha1="0eacbdb9b70db884fcec013150958952f56b2de3">
-        <dex dex="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_f30a5a2691cee2f0b831b411e5cba412bb4a027a\classes.dex" />
+        revision="26.0.2"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\3.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\53e3da3cad9fa2168bbddc6365107e8a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
         optimize="true"
-        revision="26.0.1"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Raylison-WindowsN\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_33eb2b17686a73a614d212564572358c6f3ed0d7\classes.dex" />
+        revision="26.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\65c565c15bd89f9c5b3e0e19d97df6d7\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-compat-25.3.1.aar\df3d220c3cad191bbd5ead6546f12438\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.3.1.aar\a1e80d74f2faf3dbad88414831c53a0b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\0ed6195b02c3217cd53fd8a4773038b9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\8e528383e2dc2afc1fee2226f69e75d8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\5a82b31a8b36ccebdc82450bdc3d4b14\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.3.1.aar\20ce4d5256ec3b49510663a5abdb2af0\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\192690c353b7506f810c8f3bbb02b771\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\c4742073bbe096975094b8320bee7328\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\1.jar" />
     </item>
 
 </items>

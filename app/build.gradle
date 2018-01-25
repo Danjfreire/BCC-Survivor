@@ -2,7 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
+<<<<<<< HEAD
+=======
     buildToolsVersion "26.0.2"
+>>>>>>> 532ea5ebe063953f07d6e4fcfa107270dc3bc346
     defaultConfig {
         applicationId "com.ufrpe.bccsurvivor"
         minSdkVersion 21

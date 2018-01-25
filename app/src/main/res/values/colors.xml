@@ -5,6 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name ="scoreColor">#ffffff</color>
     <color name="questionBackgroud">#d6d5d5</color>
+<<<<<<< HEAD
+    <color name="colorYellow">#FFFF00</color>
+    <color name="morphable">#d5ecf1</color>
+=======
     <color name="questaoBanco">#d10e1b</color>
     <color name="colorYellow">#dfdf00</color>
+>>>>>>> 532ea5ebe063953f07d6e4fcfa107270dc3bc346
 </resources>

@@ -5,37 +5,38 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_bg"
+    android:baselineAligned="false"
     android:orientation="vertical"
     tools:context="com.ufrpe.bccsurvivor.MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:gravity="center"
         android:text="MENU"
-        android:textSize="30dp"
-        android:gravity="center"/>
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginBottom="25dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="200dp"
         android:gravity="center"
         android:text="@string/modo_jogo" />
 
     <Button
+        android:id="@+id/botaoRanking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/botaoRanking"
+        android:layout_marginBottom="25dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="25dp"
-        android:text="@string/ranking"
         android:gravity="center"
-        />
+        android:text="@string/ranking" />
 
     <Button
         android:id="@+id/botaoQuestoes"
@@ -43,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="@string/banco_de_quest_es"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="@string/banco_de_quest_es" />
 
 </LinearLayout>
