@@ -204,7 +204,7 @@ public class GameActivity extends AppCompatActivity {
 
             URL url = null;
             try {
-                url = new URL("http://10.0.2.2:5000/bccsurvivor/disciplina?disciplina=" + tvDisciplina.getText());
+                url = new URL("http://"+getString(R.string.ip)+":5000/bccsurvivor/disciplina?disciplina=" + tvDisciplina.getText());
                 HttpURLConnection conection = (HttpURLConnection) url.openConnection();
                 Reader reader = new InputStreamReader(conection.getInputStream());
                 Gson gson = new GsonBuilder().create();
@@ -248,7 +248,7 @@ public class GameActivity extends AppCompatActivity {
             RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),gson.toJson(params[0],Player.class));
             Log.v("json",gson.toJson(params[0],Player.class));
             Request request = new Request.Builder()
-                    .url("http://10.0.2.2:5000/user/savestate")
+                    .url("http://"+getString(R.string.ip)+":5000/user/savestate")
                     .post(body)
                     .build();
 

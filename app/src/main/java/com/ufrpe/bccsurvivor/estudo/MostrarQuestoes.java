@@ -8,16 +8,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import com.ufrpe.bccsurvivor.R;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -77,14 +72,14 @@ public class MostrarQuestoes extends AppCompatActivity {
         tv.setText(texto);
     }
 
-    class GetJasonCrimes extends AsyncTask<String, Void, QuestoesBanco[]> {
+  /*  class GetJasonCrimes extends AsyncTask<String, Void, QuestoesBanco[]> {
 
         ProgressDialog dialog;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = ProgressDialog.show(this, getString(R.string.aguarde),
+            dialog = ProgressDialog.show(get, getString(R.string.aguarde),
                     getString(R.string.baixando));
         }
 
@@ -138,6 +133,6 @@ public class MostrarQuestoes extends AppCompatActivity {
             ca = new CrimeAdapter(getContext(), result);
             inserirNaLista();
         }
-    }
+    }*/
 }
 

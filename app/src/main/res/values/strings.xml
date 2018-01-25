@@ -1,5 +1,7 @@
 <resources>
+
     <string name="loginFailure">Não foi possivel efetuar login, tente novamente</string>
+    <string name="ip">192.168.56.103</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

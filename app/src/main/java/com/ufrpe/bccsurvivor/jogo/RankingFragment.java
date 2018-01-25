@@ -103,7 +103,7 @@ public class RankingFragment extends ListFragment {
 
             URL url = null;
             try {
-                url = new URL("http://10.0.2.2:5000/user/players");
+                url = new URL("http://"+getString(R.string.ip)+":5000/user/players");
                 HttpURLConnection conection = (HttpURLConnection) url.openConnection();
                 Reader reader = new InputStreamReader(conection.getInputStream());
                 Gson gson = new GsonBuilder().create();
