@@ -6,4 +6,5 @@
     <color name ="scoreColor">#ffffff</color>
     <color name="questionBackgroud">#d6d5d5</color>
     <color name="colorYellow">#FFFF00</color>
+    <color name="morphable">#d5ecf1</color>
 </resources>
