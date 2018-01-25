@@ -1,13 +1,28 @@
 package com.ufrpe.bccsurvivor.estudo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.QuickContactBadge;
 import android.widget.TextView;
 import com.ufrpe.bccsurvivor.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by wallace on 20/11/2017.

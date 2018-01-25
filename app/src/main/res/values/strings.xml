@@ -18,8 +18,8 @@
     <string name="sim">sim</string>
     <string name="nao">não</string>
     <string name="gostou_da_resposta">Gostou da resposta?</string>
-
-
+    <string name="baixando">baixando</string>
+    <string name="aguarde">aguarde</string>
     <string name="descricao">baner</string>
     <string name="LNome">Nome</string>
     <string name="LSenha">Senha</string>
