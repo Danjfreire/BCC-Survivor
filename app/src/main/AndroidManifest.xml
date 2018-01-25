@@ -22,12 +22,14 @@
             android:name=".estudo.QuestoesDisciplina"
            >
             <intent-filter>
-                <action  android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".estudo.QuestoesDisciplinaGrade" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".estudo.QuestoesDisciplinaGrade"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".estudo.MostrarQuestoes"
             android:theme="@style/AppThemeQ" />
@@ -40,7 +42,8 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".jogo.StartGameActivity" />
-        <activity android:name=".CadastroActivity"></activity>
+        <activity android:name=".CadastroActivity" />
+        <activity android:name=".jogo.GameOverActivity"></activity>
     </application>
 
 </manifest>

@@ -127,6 +127,7 @@ public class GameActivity extends AppCompatActivity {
                 if (gameControl.getNumPulos() > 0) {
                     carregarQuestao();
                     gameControl.diminuirPulos(findViewById(R.id.pulos));
+                    btnPular.setBackground(getDrawable(R.drawable.btn_grey));
                 }else
                     Toast.makeText(GameActivity.this, "Não possui pulos restante", Toast.LENGTH_SHORT).show();
             }
@@ -137,12 +138,19 @@ public class GameActivity extends AppCompatActivity {
         if (alt.getText().equals(questaoAtual.getResposta())) {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
-            if (acertou == 1) //mudar para 3
-                atualizarFase();
+
+            if (acertou == 3){
+                Intent i =new Intent(GameActivity.this,GameOverActivity.class);
+                i.putExtra("player",player);
+                startActivity(i);
+            }
+            atualizarFase();
         } else {
             gameControl.diminuirVida(findViewById(R.id.vidas));
             if (gameControl.getNumVidas() == 0) {
-                //perdeu, criar tela de derrota
+                Intent i =new Intent(GameActivity.this,GameOverActivity.class);
+                i.putExtra("player",player);
+                startActivity(i);
             }
         }
     }
