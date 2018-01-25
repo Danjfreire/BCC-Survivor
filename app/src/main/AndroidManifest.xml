@@ -11,9 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".LoginActivity" android:screenOrientation="portrait"  >
-=======
         <activity android:name=".estudo.QuestoesDisciplina" />
         <activity android:name=".jogo.RankingActivity" />
         <activity
@@ -23,24 +20,13 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait">
->>>>>>> 06f2689b572b5efc86cb9e304431d3bbe782953e
             <intent-filter>
                 <action  android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".jogo.RankingActivity" />
-        <activity android:name=".jogo.GameActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".jogo.PlayerInfoActivity"/>
-        <activity
-            android:name=".estudo.QuestoesDisciplina"
-            android:theme="@style/AppThemeQ">
-        </activity>
         <activity android:name=".estudo.QuestoesDisciplinaGrade" android:screenOrientation="portrait"/>
-=======
->>>>>>> 06f2689b572b5efc86cb9e304431d3bbe782953e
         <activity
             android:name=".estudo.MostrarQuestoes"
             android:theme="@style/AppThemeQ" />
