@@ -44,7 +44,12 @@
 
     <string name="fase1">Introdução</string>
     <string name="fase2">Programação I</string>
-    <string name="fase3">Matematica Discreta I</string>
+    <string name="fase3">Programação II</string>
+    <string name="fase4">Circuitos</string>
+    <string name="fase5">Inteligencia Artificial</string>
+    <string name="fase6">Desenvolvimento móvel</string>
+
+
 
     //disciplinas
 

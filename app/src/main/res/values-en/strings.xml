@@ -40,9 +40,13 @@
     <string name="tv_BCC">BCC</string>
     <string name="tv_Survivor">Survivor</string>
 
-    <string name="fase1">Introduction</string>
-    <string name="fase2">Programming I</string>
-    <string name="fase3">Math I</string>
+    <string name="fase1">Introdução</string>
+    <string name="fase2">Programação I</string>
+    <string name="fase3">Programação II</string>
+    <string name="fase4">Circuitos</string>
+    <string name="fase5">Inteligencia Artificial</string>
+    <string name="fase6">Desenvolvimento móvel</string>
+
 
 
     <string name="calculo_ni">CALCULATION NI</string>
