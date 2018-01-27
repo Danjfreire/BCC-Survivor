@@ -28,12 +28,11 @@
                  android:layout_gravity="center_vertical"
                  android:src="@drawable/new_question"/>
         </LinearLayout>
-        <fragment
+        <FrameLayout
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:id="@+id/fragmentoMostrarQuestoes"
-            android:name="com.ufrpe.bccsurvivor.estudo.ListaFragmento"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></fragment>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

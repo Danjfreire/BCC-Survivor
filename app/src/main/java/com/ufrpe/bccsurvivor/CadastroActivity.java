@@ -68,7 +68,7 @@ public class CadastroActivity extends AppCompatActivity {
             URL url = null;
             try {
                 checarCampos();
-                url = new URL("http://"+getString(R.string.ip)+":5000/user/cadastro?login=" + editLogin.getText().toString() +
+                url = new URL("http://192.168.56.103:5000/user/cadastro?login=" + editLogin.getText().toString() +
                         "&senha=" + Encrypter.getInstance().md5(editSenha.getText().toString()) +
                         "&email=" + editEmail.getText().toString() + "&nickname=" + editNickname.getText().toString());
                 HttpURLConnection conection = (HttpURLConnection) url.openConnection();

@@ -2,6 +2,9 @@
     <string name="loginFailure">Could not Sign in, try again</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>
+    <string name="inserindo">inserting</string>
+    <string name="realizada">realized with sucess</string>
+    <string name="error">error</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="modo_jogo">Game Mode</string>
@@ -9,8 +12,8 @@
     <string name="banco_de_quest_es">Questions Database</string>
     <string name="concluir">conclude</string>
     <string name="disciplina">Disciplina</string>
-    <string name="assunto">Subject(Require)</string>
-    <string name="pergunta_obrigat_rio">Question(Require)</string>
+    <string name="assunto">Subject</string>
+    <string name="pergunta_obrigat_rio">Question</string>
     <string name="resposta">Answer</string>
     <string name="criar">create</string>
     <string name="pergunta">Question</string>

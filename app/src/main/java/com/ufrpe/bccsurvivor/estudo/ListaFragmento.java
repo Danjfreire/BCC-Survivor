@@ -1,7 +1,9 @@
 package com.ufrpe.bccsurvivor.estudo;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,12 +18,40 @@ import android.widget.TextView;
 
 import com.ufrpe.bccsurvivor.R;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+
 /**
  * Created by wallace on 29/11/2017.
  */
 
 public class ListaFragmento extends Fragment {
     private FragmentManager fragmentManager;
+    private ArrayList<QuestoesBanco> questoesBancos;
+
+    public static ListaFragmento novaInstancia(ArrayList<QuestoesBanco> questoesBancos){
+        ListaFragmento listaFragmento = new ListaFragmento();
+        Bundle args = new Bundle();
+        args.putParcelableArrayList("questoes",questoesBancos);
+        listaFragmento.setArguments(args);
+        return listaFragmento;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() != null)
+            questoesBancos = getArguments().getParcelableArrayList("questoes");
+    }
 
     @Nullable
     @Override
@@ -31,7 +61,7 @@ public class ListaFragmento extends Fragment {
 
         fragmentManager = getFragmentManager();
 
-        ListaQuestoes l = new ListaQuestoes(getContext());
+        ListaQuestoes l = new ListaQuestoes(getContext(),questoesBancos);
 
         lv.setAdapter(l);
 
@@ -41,16 +71,11 @@ public class ListaFragmento extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(isSmartphone()){
                     Intent i = new Intent(getContext(),TelaExibicao.class);
-                    TextView titulo = (TextView) view.findViewById(R.id.tituloItem);
-                    TextView subTitulo = (TextView) view.findViewById(R.id.subtituloItem);
-                    i.putExtra("titulo", titulo.getText());
-                    i.putExtra("subtitulo", subTitulo.getText());
+                    i.putExtra("questao",questoesBancos.get(position));
                     startActivity(i);
                 }else{
                     FragmentTransaction ft = fragmentManager.beginTransaction();
-                    TextView titulo = (TextView) view.findViewById(R.id.tituloItem);
-                    TextView subTitulo = (TextView) view.findViewById(R.id.subtituloItem);
-                    TelaExibicaoFragment telaExibicao = TelaExibicaoFragment.novaIntacia((String)titulo.getText(),(String)subTitulo.getText(),"Quem descobriu o Brasil?","resposta");
+                    TelaExibicaoFragment telaExibicao = TelaExibicaoFragment.novaIntacia(questoesBancos.get(position),"RESPOSTA");
                     ft.replace(R.id.areaTransicao, telaExibicao, "exibicao");
                     ft.commit();
                 }
@@ -59,6 +84,8 @@ public class ListaFragmento extends Fragment {
 
         return lv;
     }
+
+
 
     private boolean isSmartphone() {
         return getResources().getBoolean(R.bool.smartphone);

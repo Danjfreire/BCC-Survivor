@@ -10,12 +10,12 @@ import com.ufrpe.bccsurvivor.R;
  */
 
 public class ViewHolder {
-    final TextView titulo;
+    final TextView assunto;
     final TextView autor;
-    final ImageView img;
+    final TextView id;
     public ViewHolder(View view){
-        titulo =(TextView) view.findViewById(R.id.tituloItem);
-        autor =(TextView) view.findViewById(R.id.subtituloItem);
-        img = (ImageView) view.findViewById(R.id.iconNotification);
+        assunto =(TextView) view.findViewById(R.id.conteudoAssunto);
+        autor =(TextView) view.findViewById(R.id.conteudoAutor);
+        id = (TextView) view.findViewById(R.id.conteudoId);
     }
 }

@@ -1,7 +1,10 @@
 <resources>
 
     <string name="loginFailure">Não foi possivel efetuar login, tente novamente</string>
-    <string name="ip">192.168.56.103</string>
+    <string name="ip">10.0.2.2</string>
+    <string name="inserindo">inserindo...</string>
+    <string name="realizada">realizada com sucesso</string>
+    <string name="error">erro</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -11,8 +14,8 @@
     <string name="banco_de_quest_es">Banco de Questões</string>
     <string name="concluir">concluir</string>
     <string name="disciplina">Disciplina</string>
-    <string name="assunto">Assunto(Obrigatório)</string>
-    <string name="pergunta_obrigat_rio">Pergunta(Obrigatório)</string>
+    <string name="assunto">Assunto</string>
+    <string name="pergunta_obrigat_rio">Pergunta</string>
     <string name="resposta">Resposta</string>
     <string name="criar">criar</string>
     <string name="pergunta">Pergunta</string>

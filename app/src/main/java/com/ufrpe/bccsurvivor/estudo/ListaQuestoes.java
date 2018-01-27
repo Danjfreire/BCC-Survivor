@@ -10,19 +10,25 @@ import android.widget.TextView;
 
 import com.ufrpe.bccsurvivor.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by wallace on 24/11/2017.
  */
 
 public class ListaQuestoes extends BaseAdapter {
     private Context contexto;
+    private String disciplina;
+    private ArrayList<QuestoesBanco> questoesBanco;
 
-    public ListaQuestoes(Context c){
+    public ListaQuestoes(Context c, ArrayList<QuestoesBanco> questoesBanco){
         this.contexto = c;
+        this.disciplina = disciplina;
+        this.questoesBanco = questoesBanco;
     }
     @Override
     public int getCount() {
-        return questoesIntroducaoComputacao.length;
+        return questoesBanco.size();
     }
 
     @Override
@@ -37,65 +43,23 @@ public class ListaQuestoes extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View listView;
+        View view;
         ViewHolder holder;
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            listView = inflater.inflate(R.layout.item_lista, null);
-            holder = new ViewHolder(listView);
-            listView.setTag(holder);
+            view = inflater.inflate(R.layout.item_lista, null);
+            holder = new ViewHolder(view);
+            view.setTag(holder);
         }else{
-            listView = convertView;
-            holder = (ViewHolder) listView.getTag();
-            holder.img.clearColorFilter();
+            view = convertView;
+            holder = (ViewHolder) view.getTag();
         }
-        holder.titulo.setText(questoesIntroducaoComputacao[position].getAssunto() + "-" + position);
-        holder.autor.setText(questoesIntroducaoComputacao[position].getAutor());
-
-        if(questoesIntroducaoComputacao[position].getResposta() == null){
-            holder.img.setColorFilter(R.color.colorPrimaryDark);
-        }
-        return listView;
+        holder.assunto.setText(questoesBanco.get(position).getAssuntoQuestao());
+        holder.autor.setText(QuestoesDisciplina.nomeUsuario);
+        holder.id.setText(questoesBanco.get(position).getIdQuestao().toString());
+        return view;
     }
-
-    private Questoes[] questoesIntroducaoComputacao = {
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte","8"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte"),
-            new Questoes("Arquietura", "wallace", "Quantos bits têm um byte")
-    };
+    private boolean isSmartphone() {
+        return contexto.getResources().getBoolean(R.bool.smartphone);
+    }
 }

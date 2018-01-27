@@ -6,11 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.ufrpe.bccsurvivor.estudo.QuestoesDisciplina;
-import com.ufrpe.bccsurvivor.estudo.QuestoesDisciplinaGrade;
-import com.ufrpe.bccsurvivor.jogo.GameActivity;
 import com.ufrpe.bccsurvivor.jogo.Player;
 import com.ufrpe.bccsurvivor.jogo.RankingActivity;
 import com.ufrpe.bccsurvivor.jogo.StartGameActivity;
@@ -34,14 +31,10 @@ public class MainActivity extends AppCompatActivity {
         botaoQuestoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isSmartphone()){
-                    Intent myIntent = new Intent(MainActivity.this, QuestoesDisciplina.class);
-                    startActivity(myIntent);
-                }
-                else{
-                    Intent myIntent = new Intent(MainActivity.this, QuestoesDisciplinaGrade.class);
-                    startActivity(myIntent);
-                }
+                Intent myIntent = new Intent(MainActivity.this, QuestoesDisciplina.class);
+                myIntent.putExtra("nomeUsuario", playerLogado.getNickname());
+                myIntent.putExtra("idUsuario",playerLogado.getId());
+                startActivity(myIntent);
             }
         });
 
@@ -63,9 +56,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myintent);
             }
         });
-    }
-
-    private boolean isSmartphone() {
-        return getResources().getBoolean(R.bool.smartphone);
     }
 }
