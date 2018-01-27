@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -43,6 +47,12 @@ public class GameActivity extends AppCompatActivity {
     private QuestaoJogo questaoAtual;
     private static Random random = new Random();
     private Player player;
+
+    private Button altA;
+    private Button altB;
+    private Button altC;
+    private Button altD;
+    private Button btnPular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,19 +88,26 @@ public class GameActivity extends AppCompatActivity {
     private void atualizarFase() {
         //fazer alguma animação
         //recarregar questoes
+
         acertou = 0;
         levelAtual++;
         tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
+        findViewById(R.id.alternativaAresult).setVisibility(View.INVISIBLE);
+        findViewById(R.id.alternativaBresult).setVisibility(View.INVISIBLE);
+        findViewById(R.id.alternativaCresult).setVisibility(View.INVISIBLE);
+        findViewById(R.id.alternativaDresult).setVisibility(View.INVISIBLE);
+
         restControl = new RestController();
         restControl.execute();
+
     }
 
     private void loadButtons() {
-        final Button altA = (Button) findViewById(R.id.alternativaA);
-        final Button altB = (Button) findViewById(R.id.alternativaB);
-        final Button altC = (Button) findViewById(R.id.alternativaC);
-        final Button altD = (Button) findViewById(R.id.alternativaD);
-        final Button btnPular = (Button) findViewById(R.id.btnPular);
+        altA = (Button) findViewById(R.id.alternativaA);
+        altB = (Button) findViewById(R.id.alternativaB);
+        altC = (Button) findViewById(R.id.alternativaC);
+        altD = (Button) findViewById(R.id.alternativaD);
+        btnPular = (Button) findViewById(R.id.btnPular);
 
         altA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,13 +155,12 @@ public class GameActivity extends AppCompatActivity {
         if (alt.getText().equals(questaoAtual.getResposta())) {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
-
+            animacao();
             if (acertou == 3){
                 Intent i =new Intent(GameActivity.this,GameOverActivity.class);
                 i.putExtra("player",player);
                 startActivity(i);
             }
-            atualizarFase();
         } else {
             gameControl.diminuirVida(findViewById(R.id.vidas));
             if (gameControl.getNumVidas() == 0) {
@@ -153,6 +169,40 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(i);
             }
         }
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                atualizarFase();
+            }
+        }, 2000);
+
+    }
+
+    private void animacao() {
+        ImageView resposta;
+
+        if(altA.getText().equals(questaoAtual.getResposta())){
+            resposta = (ImageView) findViewById(R.id.alternativaAresult);
+            resposta.setBackground(getDrawable(R.drawable.check));
+        }
+        else if(altB.getText().equals(questaoAtual.getResposta())){
+            resposta = (ImageView) findViewById(R.id.alternativaBresult);
+            resposta.setBackground(getDrawable(R.drawable.check));
+        }
+        else if(altC.getText().equals(questaoAtual.getResposta())){
+            resposta = (ImageView) findViewById(R.id.alternativaCresult);
+            resposta.setBackground(getDrawable(R.drawable.check));
+        }
+        else{
+            resposta = (ImageView) findViewById(R.id.alternativaCresult);
+            resposta.setBackground(getDrawable(R.drawable.check));
+        }
+
+        findViewById(R.id.alternativaAresult).setVisibility(View.VISIBLE);
+        findViewById(R.id.alternativaBresult).setVisibility(View.VISIBLE);
+        findViewById(R.id.alternativaCresult).setVisibility(View.VISIBLE);
+        findViewById(R.id.alternativaDresult).setVisibility(View.VISIBLE);
+
     }
 
     private void inserirQuestoes(List<QuestaoJogo> questoes) {
@@ -225,7 +275,6 @@ public class GameActivity extends AppCompatActivity {
             inserirQuestoes(questoes);
         }
     }
-
 
     @Override
     protected void onStop() {

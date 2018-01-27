@@ -9,16 +9,18 @@
     <TextView
         android:id="@+id/disciplinajogo"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:text=""
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:background="@color/colorYellow"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="40dp"
+        android:background="@color/colorGame">
 
         <TextView
             android:id="@+id/pulos"
@@ -26,7 +28,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
             android:text="@string/tv_estrelas"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorYellow"
             android:textSize="30sp" />
 
         <ImageView
@@ -43,7 +45,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
             android:text="@string/tv_vida"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/questaoBanco"
             android:textSize="30sp" />
 
         <ImageView
@@ -82,7 +84,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="225dp"
-        android:layout_marginTop="15dp">
+        android:background="@color/colorGame">
 
         <TextView
             android:id="@+id/questao"
@@ -104,37 +106,87 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorGame">
 
-            <Button
-                android:id="@+id/alternativaA"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:background="@drawable/btn_red_effect"
-                android:text="@string/bt_repostaA" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/alternativaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/btn_red_effect"
+                    android:text="@string/bt_repostaA"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/alternativaAresult"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/wrong"
+                    android:visibility="invisible"/>
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/alternativaB"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:background="@drawable/btn_green_effect"
-                android:text="@string/bt_repostaB" />
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/alternativaB"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/btn_green_effect"
+                    android:text="@string/bt_repostaB"
+                    android:layout_weight="1"/>
 
+                <ImageView
+                    android:id="@+id/alternativaBresult"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/wrong"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <Button
                 android:id="@+id/alternativaC"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
+                android:layout_marginRight="15dp"
                 android:background="@drawable/btn_orange_effect"
-                android:text="@string/bt_repostaC" />
+                android:text="@string/bt_repostaC"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/alternativaCresult"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/wrong"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/alternativaD"
@@ -142,9 +194,21 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
+                android:layout_marginRight="15dp"
                 android:background="@drawable/btn_blue_effect"
-                android:text="@string/bt_repostaD" />
+                android:text="@string/bt_repostaD"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/alternativaDresult"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/wrong"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
 
             <Button
                 android:id="@+id/btnPular"

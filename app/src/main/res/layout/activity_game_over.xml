@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ufrpe.bccsurvivor.jogo.GameOverActivity">
+    tools:context="com.ufrpe.bccsurvivor.jogo.GameOverActivity"
+    android:background="@color/colorGame">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="15dp"
-        android:background="@drawable/game_over" />
+        android:background="@drawable/gameover" />
 
 
     <TextView
@@ -33,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
+            android:textColor="@android:color/holo_blue_light"
             android:layout_weight="0"
             android:text="@string/tv_score"
             android:textSize="25dp"
@@ -58,7 +60,7 @@
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
         android:text="MENU"
-        android:background="@drawable/btn_blue_effect"
+        android:background="@drawable/btn_red_effect"
         />
 
     <Button
@@ -69,7 +71,7 @@
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
         android:text="@string/playAgain"
-        android:background="@drawable/btn_red_effect"
+        android:background="@drawable/btn_yellow_effect"
         />
 
 </LinearLayout>

@@ -53,6 +53,7 @@ public class RankingFragment extends ListFragment {
             carregaPlayers();
         } else {
             players = savedInstanceState.getParcelableArrayList("lista");
+            listarPLayers(players);
         }
 
         //ListView ranking = (ListView)view.findViewById(R.id.ranking);
