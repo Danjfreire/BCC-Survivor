@@ -53,6 +53,7 @@ public class GameActivity extends AppCompatActivity {
     private Button altC;
     private Button altD;
     private Button btnPular;
+    ImageView resposta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,6 +153,9 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void verificarResposta(Button alt) {
+       if (resposta != null)
+        resposta.setBackground(getDrawable(R.drawable.wrong));
+
         if (alt.getText().equals(questaoAtual.getResposta())) {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
@@ -174,12 +178,10 @@ public class GameActivity extends AppCompatActivity {
             public void run() {
                 atualizarFase();
             }
-        }, 2000);
-
+        }, 1000);
     }
 
     private void animacao() {
-        ImageView resposta;
 
         if(altA.getText().equals(questaoAtual.getResposta())){
             resposta = (ImageView) findViewById(R.id.alternativaAresult);
@@ -194,7 +196,7 @@ public class GameActivity extends AppCompatActivity {
             resposta.setBackground(getDrawable(R.drawable.check));
         }
         else{
-            resposta = (ImageView) findViewById(R.id.alternativaCresult);
+            resposta = (ImageView) findViewById(R.id.alternativaDresult);
             resposta.setBackground(getDrawable(R.drawable.check));
         }
 

@@ -89,6 +89,7 @@ public class RankingFragment extends ListFragment {
 
     private void listarPLayers(List<Player> allPlayers) {
         this.players = new ArrayList<>(allPlayers);
+        Collections.sort(players);
         listar();
     }
 
