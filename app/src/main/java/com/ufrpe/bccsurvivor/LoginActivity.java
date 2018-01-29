@@ -1,6 +1,7 @@
 package com.ufrpe.bccsurvivor;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -32,6 +34,8 @@ import java.security.NoSuchAlgorithmException;
 public class LoginActivity extends AppCompatActivity {
 
     private RestController restController;
+    TextView t1;
+    TextView t2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         restController = new RestController();
+
+        //começo da inicialização da(s) fonte(s)
+        Typeface adobeFont = Typeface.createFromAsset(getAssets(), "fonts/adobe.ttf");
+
+        t2 = (TextView) findViewById(R.id.textView2); //Título login pt2
+        t2.setTypeface(adobeFont);
+
+        t1 = (TextView) findViewById(R.id.textView);  //Título login pt1
+        t1.setTypeface(adobeFont);
+        //fim da inicialização da(s) fonte(s)
+
 
         Button btnCadastrar = (Button) findViewById(R.id.btn_entrarCadastro);
         btnCadastrar.setOnClickListener(new View.OnClickListener() {

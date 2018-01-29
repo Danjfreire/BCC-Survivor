@@ -2,6 +2,9 @@
     <string name="loginFailure">Could not Sign in, try again</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>
+    <string name="ip">10.0.2.2</string>
+    <string name="hintCadastroNick">Choose a nickname</string>
+    <string name="falhaCadastroSenha">The password and the confirmation must be the same</string>
     <string name="inserindo">inserting</string>
     <string name="realizada">realized with sucess</string>
     <string name="error">error</string>
