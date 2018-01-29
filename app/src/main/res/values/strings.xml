@@ -100,6 +100,8 @@
     <string name="sucessoCadastro">Cadastro efetuado com sucesso, efetue login</string>
     <string name="falhaCadastro">Ocorreu uma falha no cadastro, tente novamente</string>
     <string name="playAgain">Jogar Novamente</string>
+    <string name="recorde">Recorde de pontuação</string>
+    <string name="pontucao_atual">Pontuação atual</string>
 
 
 </resources>

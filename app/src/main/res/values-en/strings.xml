@@ -95,5 +95,7 @@
     <string name="sucessoCadastro">Cadastro efetuado com sucesso, efetue login</string>
     <string name="falhaCadastro">Ocorreu uma falha no cadastro, tente novamente</string>
     <string name="playAgain">Play Again</string>
+    <string name="recorde">Current record</string>
+    <string name="pontucao_atual">Current score</string>
 
 </resources>

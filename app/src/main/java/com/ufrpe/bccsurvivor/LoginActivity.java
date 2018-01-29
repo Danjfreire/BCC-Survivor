@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Player player) {
-            if (player.getNickname() != null) {
+            if (player != null) {
                 Intent myintent = new Intent(LoginActivity.this, MainActivity.class);
                 Log.v("ToMenu", player.getNickname());
                 myintent.putExtra("player", player);

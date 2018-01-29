@@ -3,6 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:background="@color/colorGame"
     >
     <TextView
         android:id="@+id/playername"
@@ -10,7 +11,8 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="12dp"
         android:textSize="25dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/colorGame"
         />
 
     <TextView
@@ -20,6 +22,7 @@
         android:layout_marginRight="12dp"
         android:gravity="end"
         android:textColor="@android:color/holo_blue_dark"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:background="@color/colorGame"/>
 
 </LinearLayout>
