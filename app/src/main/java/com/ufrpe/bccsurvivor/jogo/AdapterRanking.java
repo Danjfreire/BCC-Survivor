@@ -39,7 +39,7 @@ public class AdapterRanking extends ArrayAdapter<Player> {
 
         Player player = getItem(position);
         holder.name.setText(player.getNickname());
-        holder.score.setText(String.valueOf(player.getScore()));
+        holder.score.setText(String.valueOf(player.getScoreRecorde()));
 
 //        if (player != null) {
 //            TextView name = (TextView) view.findViewById(R.id.playername);

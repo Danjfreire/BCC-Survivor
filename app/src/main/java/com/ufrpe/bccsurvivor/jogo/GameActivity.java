@@ -53,22 +53,21 @@ public class GameActivity extends AppCompatActivity {
     private Button altC;
     private Button altD;
     private Button btnPular;
+    ImageView resposta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        levelControl = new LevelController();
-        gameControl = new GameController();
 
         Intent intent = getIntent();
         player = (Player) intent.getParcelableExtra("player");
         tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
         levelAtual = player.getFaseAtual();
-        gameControl.setNumVidas(player.getNumVidas());
-        gameControl.setNumPulos(player.getPulos());
-        //gameControl.setScore(player.getScore());
+        acertou = 0;
+        levelControl = new LevelController();
+        gameControl = new GameController(player.getNumVidas(),player.getPulos(),player.getScore());
 
         //if (savedInstanceState != null) {
         //} else {
@@ -89,7 +88,7 @@ public class GameActivity extends AppCompatActivity {
         //fazer alguma animação
         //recarregar questoes
 
-        acertou = 0;
+        //acertou = 0;
         levelAtual++;
         tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
         findViewById(R.id.alternativaAresult).setVisibility(View.INVISIBLE);
@@ -152,34 +151,45 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void verificarResposta(Button alt) {
+       if (resposta != null)
+        resposta.setBackground(getDrawable(R.drawable.wrong));
+
         if (alt.getText().equals(questaoAtual.getResposta())) {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
+            player.setScore(gameControl.getScoreAtual());
             animacao();
+            Log.v("SCORE",String.valueOf(player.getScore()));
             if (acertou == 3){
-                Intent i =new Intent(GameActivity.this,GameOverActivity.class);
-                i.putExtra("player",player);
-                startActivity(i);
+                gameOver();
             }
         } else {
             gameControl.diminuirVida(findViewById(R.id.vidas));
+            animacao();
             if (gameControl.getNumVidas() == 0) {
-                Intent i =new Intent(GameActivity.this,GameOverActivity.class);
-                i.putExtra("player",player);
-                startActivity(i);
+                gameOver();
             }
         }
+
+        if(levelAtual == 6){
+            gameOver();
+        }
+
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 atualizarFase();
             }
-        }, 2000);
+        }, 1000);
+    }
 
+    private void gameOver(){
+        Intent i =new Intent(GameActivity.this,GameOverActivity.class);
+        i.putExtra("player",player);
+        startActivity(i);
     }
 
     private void animacao() {
-        ImageView resposta;
 
         if(altA.getText().equals(questaoAtual.getResposta())){
             resposta = (ImageView) findViewById(R.id.alternativaAresult);
@@ -194,7 +204,7 @@ public class GameActivity extends AppCompatActivity {
             resposta.setBackground(getDrawable(R.drawable.check));
         }
         else{
-            resposta = (ImageView) findViewById(R.id.alternativaCresult);
+            resposta = (ImageView) findViewById(R.id.alternativaDresult);
             resposta.setBackground(getDrawable(R.drawable.check));
         }
 
@@ -280,6 +290,9 @@ public class GameActivity extends AppCompatActivity {
     protected void onStop() {
         Log.v("STOP","ENTROU NO ONSTOP");
         player.setScoreRecorde(5000);
+        player.setPulos(gameControl.getNumPulos());
+        player.setNumVidas(gameControl.getNumVidas());
+        player.setScore(gameControl.getScoreAtual());
         StateController stateC = new StateController();
         stateC.execute(player);
         super.onStop();
