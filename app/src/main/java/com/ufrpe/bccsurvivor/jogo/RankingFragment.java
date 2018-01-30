@@ -125,5 +125,10 @@ public class RankingFragment extends ListFragment {
             listarPLayers(allPlayers);
         }
 
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
     }
+
 }
