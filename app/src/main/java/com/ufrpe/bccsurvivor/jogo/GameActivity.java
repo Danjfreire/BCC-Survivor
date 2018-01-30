@@ -76,6 +76,13 @@ public class GameActivity extends AppCompatActivity {
 
         tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
         tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
+        TextView tvVidas = (TextView) findViewById(R.id.vidas);
+        tvVidas.setText(String.valueOf(player.getNumVidas()));
+        TextView tvPulos = (TextView) findViewById(R.id.pulos);
+        tvPulos.setText(String.valueOf(player.getPulos()));
+        TextView tvScore = (TextView) findViewById(R.id.score);
+        tvScore.setText(String.valueOf(player.getScore()));
+
 
         restControl = new RestController();
         restControl.execute();
@@ -160,6 +167,8 @@ public class GameActivity extends AppCompatActivity {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
             player.setScore(gameControl.getScoreAtual());
+            if(player.getScoreRecorde() < player.getScore())
+                player.setScoreRecorde(player.getScore());
             animacao();
             Log.v("SCORE",String.valueOf(player.getScore()));
             if (acertou == 3){
@@ -293,10 +302,10 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         Log.v("STOP","ENTROU NO ONSTOP");
-        player.setScoreRecorde(5000);
         player.setPulos(gameControl.getNumPulos());
         player.setNumVidas(gameControl.getNumVidas());
         player.setScore(gameControl.getScoreAtual());
+        player.setFaseAtual(levelAtual);
         StateController stateC = new StateController();
         stateC.execute(player);
         super.onStop();
