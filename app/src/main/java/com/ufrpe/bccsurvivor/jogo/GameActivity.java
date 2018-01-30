@@ -98,7 +98,6 @@ public class GameActivity extends AppCompatActivity {
 
         restControl = new RestController();
         restControl.execute();
-
     }
 
     private void loadButtons() {
@@ -140,12 +139,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //pular para proxima questao da disciplina
-                if (gameControl.getNumPulos() > 0) {
-                    carregarQuestao();
+                if (gameControl.getNumPulos() > 0 && levelAtual < 6) {
+                    atualizarFase();
                     gameControl.diminuirPulos(findViewById(R.id.pulos));
                     btnPular.setBackground(getDrawable(R.drawable.btn_grey));
-                }else
-                    Toast.makeText(GameActivity.this, "Não possui pulos restante", Toast.LENGTH_SHORT).show();
+                }else if(levelAtual == 6){
+                    Toast.makeText(GameActivity.this, getString(R.string.cant_jump), Toast.LENGTH_SHORT).show();
+                    }
+                else
+                    Toast.makeText(GameActivity.this, getString(R.string.sem_pulos), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -181,6 +183,7 @@ public class GameActivity extends AppCompatActivity {
                 atualizarFase();
             }
         }, 1000);
+
     }
 
     private void gameOver(){
@@ -282,7 +285,8 @@ public class GameActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<QuestaoJogo> questoes) {
 
-            inserirQuestoes(questoes);
+            if(levelAtual <=6)
+                inserirQuestoes(questoes);
         }
     }
 

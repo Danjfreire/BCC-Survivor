@@ -2,7 +2,7 @@
     <string name="loginFailure">Could not Sign in, try again</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>
-    <string name="ip">10.0.2.2</string>
+    <string name="ip">192.168.15.8</string>
     <string name="hintCadastroNick">Choose a nickname</string>
     <string name="falhaCadastroSenha">The password and the confirmation must be the same</string>
     <string name="inserindo">inserting</string>
@@ -97,5 +97,7 @@
     <string name="playAgain">Play Again</string>
     <string name="recorde">Current record</string>
     <string name="pontucao_atual">Current score</string>
+    <string name="sem_pulos">You dont have remaining jumps</string>
+    <string name="cant_jump">You cant jump the level</string>
 
 </resources>

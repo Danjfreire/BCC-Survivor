@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/menu_bg"
+    android:background="@color/colorGame"
     android:baselineAligned="false"
     android:orientation="vertical"
     tools:context="com.ufrpe.bccsurvivor.MainActivity">
@@ -15,36 +15,40 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="MENU"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="200dp"
         android:gravity="center"
-        android:text="@string/modo_jogo" />
+        android:text="@string/modo_jogo"
+        android:background="@drawable/btn_yellow_effect"/>
 
     <Button
         android:id="@+id/botaoRanking"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:gravity="center"
-        android:text="@string/ranking" />
+        android:text="@string/ranking"
+        android:background="@drawable/btn_red_effect"/>
 
     <Button
         android:id="@+id/botaoQuestoes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:gravity="center"
-        android:text="@string/banco_de_quest_es" />
+        android:text="@string/banco_de_quest_es"
+        android:background="@drawable/btn_blue_effect"/>
 
 </LinearLayout>

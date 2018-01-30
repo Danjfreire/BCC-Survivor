@@ -10,11 +10,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/login_bg_2"
+
+        android:background="@color/colorGame"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +27,7 @@
             android:text="@string/tv_BCC"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorYellow"
             android:textSize="50sp" />
 
         <TextView
@@ -40,7 +37,7 @@
             android:fontFamily="@font/adobe"
             android:text="@string/tv_Survivor"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorYellow"
             android:textSize="70sp" />
 
         <EditText
@@ -48,28 +45,34 @@
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:layout_marginTop="25dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:background="@color/morphable"
             android:ems="10"
             android:hint="@string/LNome"
+
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editSenha"
             android:layout_width="match_parent"
             android:layout_height="63dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:background="@color/morphable"
             android:ems="10"
             android:hint="@string/LSenha"
+
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnLogar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@drawable/btlsenha"
-            android:backgroundTint="@color/questionBackgroud"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_blue_effect"
             android:text="@string/btLogin"
-            android:textColor="@android:color/holo_blue_dark" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:layout_width="wrap_content"
