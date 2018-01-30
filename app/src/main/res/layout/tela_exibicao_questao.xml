@@ -4,35 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/questionBackgroud">
+        android:background="@color/questionBackgroud"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/tituloExibicao"
-                android:layout_gravity="center_vertical"
-                android:textSize="20dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/questionBackgroud"
+                android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/subTituloExicao"
-                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/idTituloExicao"
-                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -40,68 +46,76 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/perres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/pergunta"/>
+                android:layout_marginStart="8dp"
+                android:text="@string/pergunta" />
+
             <TextView
                 android:id="@+id/conteudoExibicao"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"/>
-            <LinearLayout
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
+
                     <Button
                         android:id="@+id/respostaBotao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="@string/resposta"/>
+                        android:text="@string/resposta" />
                 </RelativeLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
-                        android:gravity="right"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/gostou_da_pergunta"/>
+                        android:gravity="right"
+                        android:text="@string/gostou_da_pergunta" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
-                        </LinearLayout>
+                            android:layout_weight="1"></LinearLayout>
+
                         <Button
                             android:id="@+id/sim"
                             android:layout_width="70dp"
                             android:layout_height="40dp"
-                            android:text="@string/sim">
-                        </Button>
+                            android:text="@string/sim"></Button>
+
                         <Button
                             android:id="@+id/nao"
                             android:layout_width="70dp"
                             android:layout_height="40dp"
                             android:layout_gravity="right"
-                            android:text="@string/nao">
-                        </Button>
+                            android:text="@string/nao"></Button>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
