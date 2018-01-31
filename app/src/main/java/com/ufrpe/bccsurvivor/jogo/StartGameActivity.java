@@ -52,6 +52,7 @@ public class StartGameActivity extends AppCompatActivity {
         playerLogado.setScore(0);
         playerLogado.setNumVidas(3);
         playerLogado.setPulos(1);
+        playerLogado.setFaseAtual(1);
     }
 
 }
