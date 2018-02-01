@@ -8,31 +8,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tituloCaixa"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:gravity="center_vertical"
             android:paddingLeft="16dp"
-            android:gravity="center_vertical"/>
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <EditText
                 android:id="@+id/textoCaixa"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:textColor="@android:color/black"
+                android:textSize="23sp" />
         </ScrollView>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp">
+
             <Button
                 android:id="@+id/botaoCaixa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_width="320dp"
+                android:layout_height="32dp"
                 android:layout_centerHorizontal="true"
-                android:text="@string/concluir"></Button>
+                android:layout_centerVertical="true"
+                android:background="@drawable/btlsenha"
+                android:text="@string/concluir"
+                android:textSize="22sp"></Button>
         </RelativeLayout>
 
     </LinearLayout>

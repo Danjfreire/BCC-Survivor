@@ -7,72 +7,100 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/questionBackgroud"
-        >
+        android:background="@color/colorGame"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            android:text="@string/disciplina"/>
+            android:text="@string/disciplina"
+            android:textColor="@color/colorYellow"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textDisciplina"
             android:layout_width="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_height="50dp"
-            />
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorYellow"
+            android:textSize="22sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            android:text="@string/assunto"/>
+            android:text="@string/assunto"
+            android:textColor="@color/colorYellow"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/editAssunto"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            android:text="@string/pergunta_obrigat_rio"/>
+            android:text="@string/pergunta_obrigat_rio"
+            android:textColor="@color/colorYellow"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/pergunta"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            android:text="@string/resposta"/>
+            android:text="@string/resposta"
+            android:textColor="@color/colorYellow"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/resposta"
             android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/black" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp">
+
             <Button
                 android:id="@+id/salvar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:background="@drawable/ic_done_grey600_36dp"
-                android:layout_centerHorizontal="true"/>
+                android:backgroundTint="@color/colorPrimary" />
         </RelativeLayout>
     </LinearLayout>
 

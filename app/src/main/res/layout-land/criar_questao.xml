@@ -1,90 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundGravity="center"
-    android:background="@color/questionBackgroud">
+    android:background="@color/colorGame"
+    android:foregroundGravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <LinearLayout
-            android:gravity="center"
             android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:gravity="center"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
-                android:text="@string/disciplina"/>
+                android:text="@string/disciplina"
+                android:textColor="@color/colorYellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/textDisciplina"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                />
+                android:layout_marginStart="8dp"
+                android:textColor="@color/colorYellow"
+                android:textSize="24sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
-                android:text="@string/assunto"/>
+                android:text="@string/assunto"
+                android:textColor="@color/colorYellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/editAssunto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"/>
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp">
+
                 <Button
                     android:id="@+id/salvar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_done_grey600_36dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"/>
+                    android:background="@drawable/ic_done_grey600_36dp"
+                    android:backgroundTint="@color/colorPrimary" />
             </RelativeLayout>
         </LinearLayout>
+
         <LinearLayout
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:gravity="center_vertical"
-                android:text="@string/pergunta_obrigat_rio"/>
+                android:text="@string/pergunta_obrigat_rio"
+                android:textColor="@color/colorYellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/pergunta"
                 android:layout_width="match_parent"
-                android:background="@color/colorPrimary"
+                android:layout_height="100dp"
                 android:layout_marginEnd="8dp"
-                android:layout_height="100dp" />
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:gravity="center_vertical"
-                android:text="@string/resposta"/>
+                android:text="@string/resposta"
+                android:textColor="@color/colorYellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/resposta"
                 android:layout_width="match_parent"
-                android:background="@color/colorPrimary"
+                android:layout_height="100dp"
                 android:layout_marginEnd="8dp"
-                android:layout_height="100dp" />
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
         </LinearLayout>
     </LinearLayout>
 

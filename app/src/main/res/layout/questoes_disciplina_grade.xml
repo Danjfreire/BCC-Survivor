@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/new_layout_bg"
+        android:background="@color/colorGame"
         android:orientation="vertical">
 
         <Toolbar
@@ -18,12 +20,15 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/tituloquestoesgrade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:text="BCC Survivor"
-                    android:textSize="30dp" />
+                    android:textColor="@color/colorYellow"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </Toolbar>
 
@@ -35,6 +40,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@color/morphable"
+            android:fadingEdge="horizontal|vertical"
             android:numColumns="3" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

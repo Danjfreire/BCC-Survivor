@@ -22,43 +22,52 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="20dp" />
+                android:textColor="@color/colorYellow"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/subTituloExicaoResposta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="15dp" />
+                android:textColor="@color/colorYellow"
+                android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/idTituloExicaoResposta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="15dp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/resposta" />
+            android:text="@string/resposta"
+            android:textColor="@color/colorYellow"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/areaExibicaoResposta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="367dp"
+            android:layout_height="300dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"></TextView>
+            android:background="@color/colorPrimary"
+            android:fontFamily="monospace"
+            android:textColor="@android:color/background_dark"
+            android:textSize="22sp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/gostou_da_resposta" />
+            android:text="@string/gostou_da_resposta"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -76,14 +85,18 @@
                     android:layout_width="70dp"
                     android:layout_height="30dp"
                     android:background="@drawable/btn_grey"
-                    android:text="@string/sim"></Button>
+                    android:text="@string/sim"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHighlight="@color/red"></Button>
 
                 <Button
                     android:id="@+id/naor"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
                     android:background="@drawable/btn_grey"
-                    android:text="@string/nao"></Button>
+                    android:text="@string/nao"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHighlight="@color/green"></Button>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
