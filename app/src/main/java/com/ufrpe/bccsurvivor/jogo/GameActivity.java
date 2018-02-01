@@ -3,6 +3,7 @@ package com.ufrpe.bccsurvivor.jogo;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -102,7 +103,6 @@ public class GameActivity extends AppCompatActivity {
         findViewById(R.id.alternativaBresult).setVisibility(View.INVISIBLE);
         findViewById(R.id.alternativaCresult).setVisibility(View.INVISIBLE);
         findViewById(R.id.alternativaDresult).setVisibility(View.INVISIBLE);
-
         restControl = new RestController();
         restControl.execute();
     }
@@ -172,13 +172,13 @@ public class GameActivity extends AppCompatActivity {
             animacao();
             Log.v("SCORE",String.valueOf(player.getScore()));
             if (acertou == 3){
-                gameOver();
+                (new Handler()).postDelayed(this::gameOver, 1000);
             }
         } else {
             gameControl.diminuirVida(findViewById(R.id.vidas));
             animacao();
             if (gameControl.getNumVidas() == 0) {
-                gameOver();
+                (new Handler()).postDelayed(this::gameOver, 1000);
             }
         }
 
@@ -186,12 +186,7 @@ public class GameActivity extends AppCompatActivity {
             gameOver();
         }
 
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                atualizarFase();
-            }
-        }, 1000);
+        (new Handler()).postDelayed(this::atualizarFase, 1000);
 
     }
 
