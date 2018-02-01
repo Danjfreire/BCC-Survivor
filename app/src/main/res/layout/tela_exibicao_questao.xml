@@ -8,11 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< HEAD
-        android:background="@color/questionBackgroud"
-=======
+
         android:background="@color/colorGame"
->>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
+
         android:orientation="vertical">
 
         <LinearLayout
@@ -28,24 +26,32 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 android:background="@color/questionBackgroud"
 =======
 >>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                 android:textSize="20dp" />
+=======
+                android:textColor="@color/colorYellow"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+>>>>>>> d35a8b29021dfc37ba93cf3a41198b8ec7d1b529
 
             <TextView
                 android:id="@+id/subTituloExicao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="15dp" />
+                android:textColor="@color/colorYellow"
+                android:textSize="26sp" />
 
             <TextView
                 android:id="@+id/idTituloExicao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textSize="15dp" />
+                android:textColor="@color/colorYellow"
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,7 +66,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/pergunta" />
+                android:text="@string/pergunta"
+                android:textColor="@color/colorYellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/conteudoExibicao"
@@ -69,7 +78,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary" />
+                android:background="@color/colorPrimary"
+                android:fontFamily="monospace"
+                android:textColor="@android:color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,8 +101,15 @@
 <<<<<<< HEAD
 =======
                         android:background="@drawable/btn_grey"
+<<<<<<< HEAD
 >>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                         android:text="@string/resposta" />
+=======
+                        android:text="@string/resposta"
+                        android:textColor="@color/colorYellow"
+                        android:textColorHighlight="@android:color/holo_orange_light"
+                        android:textSize="21sp" />
+>>>>>>> d35a8b29021dfc37ba93cf3a41198b8ec7d1b529
                 </RelativeLayout>
 
                 <LinearLayout
@@ -103,7 +121,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="right"
-                        android:text="@string/gostou_da_pergunta" />
+                        android:text="@string/gostou_da_pergunta"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -123,8 +143,14 @@
 =======
                             android:layout_height="30dp"
                             android:background="@drawable/btn_grey"
+<<<<<<< HEAD
 >>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                             android:text="@string/sim"></Button>
+=======
+                            android:text="@string/sim"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHighlight="@color/green"></Button>
+>>>>>>> d35a8b29021dfc37ba93cf3a41198b8ec7d1b529
 
                         <Button
                             android:id="@+id/nao"
@@ -134,8 +160,14 @@
 <<<<<<< HEAD
 =======
                             android:background="@drawable/btn_grey"
+<<<<<<< HEAD
 >>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                             android:text="@string/nao"></Button>
+=======
+                            android:text="@string/nao"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHighlight="@color/red"></Button>
+>>>>>>> d35a8b29021dfc37ba93cf3a41198b8ec7d1b529
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

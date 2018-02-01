@@ -9,4 +9,6 @@
     <color name="questaoBanco">#d10e1b</color>
     <color name="colorYellow">#e6e600</color>
     <color name="colorGame">#52527a</color>
+    <color name="red">#e53935</color>
+    <color name="green">#4caf50</color>
 </resources>
