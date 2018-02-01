@@ -10,6 +10,6 @@
         android:id="@+id/ranking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"></ListView>
+        android:background="@color/colorGame"></ListView>
 
 </LinearLayout>

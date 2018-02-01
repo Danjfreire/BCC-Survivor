@@ -4,31 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/new_layout_bg"
         android:orientation="vertical">
+
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="60dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:textSize="30dp"
-                    android:text="BCC Survivor"/>
+                    android:layout_centerVertical="true"
+                    android:text="BCC Survivor"
+                    android:textSize="30dp" />
             </RelativeLayout>
         </Toolbar>
+
         <ListView
             android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"/>
+            android:layout_marginStart="8dp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

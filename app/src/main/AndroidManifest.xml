@@ -16,7 +16,8 @@
         <activity
             android:name=".jogo.GameActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".jogo.PlayerInfoActivity" />
+        <activity android:name=".jogo.PlayerInfoActivity"
+            android:screenOrientation="portrait"/>
         <activity
 
             android:name=".LoginActivity"
@@ -40,9 +41,12 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".jogo.StartGameActivity" />
-        <activity android:name=".CadastroActivity" />
-        <activity android:name=".jogo.GameOverActivity"></activity>
+        <activity android:name=".jogo.StartGameActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CadastroActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".jogo.GameOverActivity"
+                  android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

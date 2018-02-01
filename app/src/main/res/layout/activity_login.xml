@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,11 +10,16 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+<<<<<<< HEAD
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/login_bg_2"
+=======
+
+        android:background="@color/colorGame"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,13 +28,14 @@
 
         <TextView
             android:id="@+id/textView"
+            fontPath="adobe.ttf"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:fontFamily="@font/adobe"
             android:text="@string/tv_BCC"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/morphable"
+            android:textColor="@color/colorYellow"
             android:textSize="50sp" />
 
         <TextView
@@ -38,7 +45,7 @@
             android:fontFamily="@font/adobe"
             android:text="@string/tv_Survivor"
             android:textAlignment="center"
-            android:textColor="@color/morphable"
+            android:textColor="@color/colorYellow"
             android:textSize="70sp" />
 
         <EditText
@@ -46,28 +53,40 @@
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:layout_marginTop="25dp"
+<<<<<<< HEAD
+=======
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
             android:background="@color/morphable"
             android:ems="10"
             android:hint="@string/LNome"
+
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editSenha"
             android:layout_width="match_parent"
             android:layout_height="63dp"
+<<<<<<< HEAD
+=======
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
             android:background="@color/morphable"
             android:ems="10"
             android:hint="@string/LSenha"
+
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnLogar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@drawable/btlsenha"
-            android:backgroundTint="@color/questionBackgroud"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_blue_effect"
             android:text="@string/btLogin"
-            android:textColor="@android:color/holo_blue_dark" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:layout_width="wrap_content"

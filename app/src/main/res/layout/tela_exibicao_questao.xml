@@ -8,7 +8,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+<<<<<<< HEAD
         android:background="@color/questionBackgroud"
+=======
+        android:background="@color/colorGame"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
         android:orientation="vertical">
 
         <LinearLayout
@@ -23,7 +27,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+<<<<<<< HEAD
                 android:background="@color/questionBackgroud"
+=======
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                 android:textSize="20dp" />
 
             <TextView
@@ -77,9 +84,13 @@
 
                     <Button
                         android:id="@+id/respostaBotao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="160dp"
+                        android:layout_height="30dp"
                         android:layout_centerVertical="true"
+<<<<<<< HEAD
+=======
+                        android:background="@drawable/btn_grey"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                         android:text="@string/resposta" />
                 </RelativeLayout>
 
@@ -107,14 +118,23 @@
                         <Button
                             android:id="@+id/sim"
                             android:layout_width="70dp"
+<<<<<<< HEAD
                             android:layout_height="40dp"
+=======
+                            android:layout_height="30dp"
+                            android:background="@drawable/btn_grey"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                             android:text="@string/sim"></Button>
 
                         <Button
                             android:id="@+id/nao"
                             android:layout_width="70dp"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="right"
+<<<<<<< HEAD
+=======
+                            android:background="@drawable/btn_grey"
+>>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
                             android:text="@string/nao"></Button>
                     </LinearLayout>
                 </LinearLayout>

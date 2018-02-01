@@ -5,78 +5,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ufrpe.bccsurvivor.CadastroActivity">
+    tools:context="com.ufrpe.bccsurvivor.CadastroActivity"
+    android:background="@color/colorGame">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
         android:text="@string/cadastro"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        android:textColor="@color/colorYellow"/>
 
     <EditText
         android:id="@+id/cadastroLogin"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/hintCadastroLogin"
-        />
+        android:textColorHint="@color/colorPrimary"/>
 
     <EditText
         android:id="@+id/cadastroNickname"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/hintCadastroNick"
-        />
+        android:textColorHint="@color/colorPrimary"/>
 
     <EditText
         android:id="@+id/cadastroEmail"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/hintCadastroEmail"
-        />
+        android:textColorHint="@color/colorPrimary"/>
 
     <EditText
         android:id="@+id/cadastroSenha"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:inputType="textPassword"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/hintCadastroSenha"
-        />
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorPrimary"/>
 
     <EditText
         android:id="@+id/confirmacaoSenha"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:inputType="textPassword"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/hintConfirmSenha"
-        />
+        android:inputType="textPassword"
+        android:textColorHint="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/btn_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:text="@string/cadastrar"
+        android:layout_marginTop="50dp"
         android:background="@drawable/btn_blue_effect"
-        android:textAlignment="center"
-        />
+        android:text="@string/cadastrar"
+        android:textAlignment="center" />
 
 </LinearLayout>

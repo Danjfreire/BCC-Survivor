@@ -33,6 +33,16 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\15.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Elal\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\65c565c15bd89f9c5b3e0e19d97df6d7\jars\classes.jar"
         jumboMode="false"
         min-sdk-version="21"
@@ -100,6 +110,16 @@
         revision="26.0.2"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
         <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Elal\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.1\84b4b7d1c4a238e7899972b7446c250691e65f1f\okhttp-3.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="21"
+        optimize="true"
+        revision="26.0.2"
+        sha1="84b4b7d1c4a238e7899972b7446c250691e65f1f">
+        <dex dex="C:\Users\Elal\Documents\GitHub\BCC-Survivor\app\build\intermediates\transforms\preDex\release\4.jar" />
     </item>
     <item
         is-multidex="false"

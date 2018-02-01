@@ -60,16 +60,14 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        levelControl = new LevelController();
-        gameControl = new GameController();
 
         Intent intent = getIntent();
         player = (Player) intent.getParcelableExtra("player");
         tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
         levelAtual = player.getFaseAtual();
-        gameControl.setNumVidas(player.getNumVidas());
-        gameControl.setNumPulos(player.getPulos());
-        //gameControl.setScore(player.getScore());
+        acertou = 0;
+        levelControl = new LevelController();
+        gameControl = new GameController(player.getNumVidas(),player.getPulos(),player.getScore());
 
         //if (savedInstanceState != null) {
         //} else {
@@ -78,6 +76,13 @@ public class GameActivity extends AppCompatActivity {
 
         tvDisciplina = (TextView) findViewById(R.id.disciplinajogo);
         tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
+        TextView tvVidas = (TextView) findViewById(R.id.vidas);
+        tvVidas.setText(String.valueOf(player.getNumVidas()));
+        TextView tvPulos = (TextView) findViewById(R.id.pulos);
+        tvPulos.setText(String.valueOf(player.getPulos()));
+        TextView tvScore = (TextView) findViewById(R.id.score);
+        tvScore.setText(String.valueOf(player.getScore()));
+
 
         restControl = new RestController();
         restControl.execute();
@@ -90,7 +95,7 @@ public class GameActivity extends AppCompatActivity {
         //fazer alguma animação
         //recarregar questoes
 
-        acertou = 0;
+        //acertou = 0;
         levelAtual++;
         tvDisciplina.setText(levelControl.loadLevel(levelAtual, getApplicationContext()));
         findViewById(R.id.alternativaAresult).setVisibility(View.INVISIBLE);
@@ -100,7 +105,6 @@ public class GameActivity extends AppCompatActivity {
 
         restControl = new RestController();
         restControl.execute();
-
     }
 
     private void loadButtons() {
@@ -142,12 +146,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //pular para proxima questao da disciplina
-                if (gameControl.getNumPulos() > 0) {
-                    carregarQuestao();
+                if (gameControl.getNumPulos() > 0 && levelAtual < 6) {
+                    atualizarFase();
                     gameControl.diminuirPulos(findViewById(R.id.pulos));
                     btnPular.setBackground(getDrawable(R.drawable.btn_grey));
-                }else
-                    Toast.makeText(GameActivity.this, "Não possui pulos restante", Toast.LENGTH_SHORT).show();
+                }else if(levelAtual == 6){
+                    Toast.makeText(GameActivity.this, getString(R.string.cant_jump), Toast.LENGTH_SHORT).show();
+                    }
+                else
+                    Toast.makeText(GameActivity.this, getString(R.string.sem_pulos), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -159,26 +166,39 @@ public class GameActivity extends AppCompatActivity {
         if (alt.getText().equals(questaoAtual.getResposta())) {
             acertou++;
             gameControl.aumentarScore(findViewById(R.id.score));
+            player.setScore(gameControl.getScoreAtual());
+            if(player.getScoreRecorde() < player.getScore())
+                player.setScoreRecorde(player.getScore());
             animacao();
+            Log.v("SCORE",String.valueOf(player.getScore()));
             if (acertou == 3){
-                Intent i =new Intent(GameActivity.this,GameOverActivity.class);
-                i.putExtra("player",player);
-                startActivity(i);
+                gameOver();
             }
         } else {
             gameControl.diminuirVida(findViewById(R.id.vidas));
+            animacao();
             if (gameControl.getNumVidas() == 0) {
-                Intent i =new Intent(GameActivity.this,GameOverActivity.class);
-                i.putExtra("player",player);
-                startActivity(i);
+                gameOver();
             }
         }
+
+        if(levelAtual == 6){
+            gameOver();
+        }
+
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 atualizarFase();
             }
         }, 1000);
+
+    }
+
+    private void gameOver(){
+        Intent i =new Intent(GameActivity.this,GameOverActivity.class);
+        i.putExtra("player",player);
+        startActivity(i);
     }
 
     private void animacao() {
@@ -274,14 +294,18 @@ public class GameActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<QuestaoJogo> questoes) {
 
-            inserirQuestoes(questoes);
+            if(levelAtual <=6)
+                inserirQuestoes(questoes);
         }
     }
 
     @Override
     protected void onStop() {
         Log.v("STOP","ENTROU NO ONSTOP");
-        player.setScoreRecorde(5000);
+        player.setPulos(gameControl.getNumPulos());
+        player.setNumVidas(gameControl.getNumVidas());
+        player.setScore(gameControl.getScoreAtual());
+        player.setFaseAtual(levelAtual);
         StateController stateC = new StateController();
         stateC.execute(player);
         super.onStop();
