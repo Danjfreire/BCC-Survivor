@@ -5,11 +5,9 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="@drawable/login_bg_2"
-=======
+
     android:background="@color/colorGame"
->>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
+
     android:baselineAligned="false"
     android:orientation="vertical"
     tools:context="com.ufrpe.bccsurvivor.MainActivity">
@@ -19,27 +17,18 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="MENU"
-<<<<<<< HEAD
-        android:textColor="@color/colorPrimary"
-        android:textSize="30dp" />
-=======
+
         android:textSize="30dp"
         android:textColor="@color/colorPrimary"/>
->>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
-
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-<<<<<<< HEAD
-        android:layout_height="46dp"
-=======
+
         android:layout_height="40dp"
->>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="200dp"
-        android:background="@drawable/btlsenha"
         android:gravity="center"
         android:text="@string/modo_jogo"
         android:background="@drawable/btn_yellow_effect"/>
@@ -47,15 +36,11 @@
     <Button
         android:id="@+id/botaoRanking"
         android:layout_width="match_parent"
-<<<<<<< HEAD
-        android:layout_height="46dp"
-=======
+
         android:layout_height="40dp"
->>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="@drawable/btlsenha"
         android:gravity="center"
         android:text="@string/ranking"
         android:background="@drawable/btn_red_effect"/>
@@ -63,14 +48,11 @@
     <Button
         android:id="@+id/botaoQuestoes"
         android:layout_width="match_parent"
-<<<<<<< HEAD
+
         android:layout_height="46dp"
-=======
-        android:layout_height="40dp"
->>>>>>> 0cdf6a9f5c8801fcaa08b3b694c8448d9c3df80b
+
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="@drawable/btlsenha"
         android:gravity="center"
         android:text="@string/banco_de_quest_es"
         android:background="@drawable/btn_blue_effect"/>

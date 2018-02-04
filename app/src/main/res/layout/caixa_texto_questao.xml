@@ -36,16 +36,7 @@
 
             <Button
                 android:id="@+id/botaoCaixa"
-<<<<<<< HEAD
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="@android:drawable/checkbox_on_background"
-                android:foregroundGravity="bottom"
-                android:textAlignment="gravity"
-                android:textColor="@color/colorPrimaryDark"></Button>
-=======
+
                 android:layout_width="320dp"
                 android:layout_height="32dp"
                 android:layout_centerHorizontal="true"
@@ -53,7 +44,6 @@
                 android:background="@drawable/btlsenha"
                 android:text="@string/concluir"
                 android:textSize="22sp"></Button>
->>>>>>> d35a8b29021dfc37ba93cf3a41198b8ec7d1b529
         </RelativeLayout>
 
     </LinearLayout>

@@ -1,7 +1,7 @@
 <resources>
 
     <string name="loginFailure">Não foi possivel efetuar login, tente novamente</string>
-    <string name="ip">192.168.15.8</string>
+    <string name="ip">10.246.241.95</string>
     <string name="inserindo">inserindo...</string>
     <string name="realizada">realizada com sucesso</string>
     <string name="error">erro</string>

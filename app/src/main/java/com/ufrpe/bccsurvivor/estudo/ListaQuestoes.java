@@ -55,7 +55,7 @@ public class ListaQuestoes extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         holder.assunto.setText(questoesBanco.get(position).getAssuntoQuestao());
-        holder.autor.setText(QuestoesDisciplina.nomeUsuario);
+        holder.autor.setText(questoesBanco.get(position).getAutorQuestao().toString());
         holder.id.setText(questoesBanco.get(position).getIdQuestao().toString());
         return view;
     }

@@ -32,8 +32,8 @@ import java.util.List;
  */
 
 public class QuestoesDisciplina extends AppCompatActivity {
-    public static String nomeUsuario = "wallace";
-    public static int idUsuario = 1;
+    public static String nomeUsuario;
+    public static int idUsuario;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -98,8 +98,8 @@ public class QuestoesDisciplina extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        //nomeUsuario = i.getExtras().getString("nomeUsuario");
-        //idUsuario = i.getExtras().getInt("idUsuario");
+        nomeUsuario = i.getExtras().getString("nomeUsuario");
+        idUsuario = i.getExtras().getInt("idUsuario");
 
     }
 
