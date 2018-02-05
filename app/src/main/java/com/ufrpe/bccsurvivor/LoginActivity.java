@@ -18,7 +18,12 @@ import com.google.gson.GsonBuilder;
 import com.ufrpe.bccsurvivor.jogo.Player;
 import com.ufrpe.bccsurvivor.jogo.Usuario;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.HttpURLConnection;
@@ -72,9 +77,10 @@ public class LoginActivity extends AppCompatActivity {
                 EditText editLogin = (EditText) findViewById(R.id.editLogin);
                 EditText editSenha = (EditText) findViewById(R.id.editSenha);
 
-                String dados[] = new String[2];
+                String dados[] = new String[3];
                 dados[0] = editLogin.getText().toString();
                 dados[1] = Encrypter.getInstance().md5(editSenha.getText().toString());
+                dados[2] = editSenha.getText().toString();
                 Log.v("Senha", dados[1]);
 
                 restController.execute(dados);
@@ -85,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private class RestController extends AsyncTask<String[], Void, Player> {
+        private boolean ADM = false;
 
         @Override
         protected Player doInBackground(String[]... params) {
@@ -92,6 +99,19 @@ public class LoginActivity extends AppCompatActivity {
             URL url = null;
             try {
                 String dados[] = params[0];
+                url = new URL("http://"+getString(R.string.ip)+":5000/adm?admLogin=" + dados[0] + "&admSenha=" + dados[2]);
+                HttpURLConnection conection2 = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = conection2.getInputStream();
+                JSONArray json;
+                json = new JSONArray(converterStreamToString(inputStream));
+                inputStream.close();
+                if(json.length() > 0){
+                    ADM = true;
+                    return new Player(json.getJSONObject(0).getInt("admId"),
+                            json.getJSONObject(0).getString("admLogin"));
+                }
+
+
                 url = new URL("http://"+getString(R.string.ip)+":5000/user/login?login=" + dados[0] + "&senha=" + dados[1]);
                 HttpURLConnection conection = (HttpURLConnection) url.openConnection();
                 Reader reader = new InputStreamReader(conection.getInputStream());
@@ -101,19 +121,38 @@ public class LoginActivity extends AppCompatActivity {
                 return player;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
 
         }
 
+        private String converterStreamToString(final InputStream input) throws IOException {
+            final BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            final StringBuilder sBuf = new StringBuilder();
+            String line = null;
+            while((line = reader.readLine()) != null){
+                sBuf.append(line);
+            }
+            input.close();
+            return  sBuf.toString();
+        }
+
         @Override
         protected void onPostExecute(Player player) {
             if (player != null) {
                 Intent myintent = new Intent(LoginActivity.this, MainActivity.class);
-                Log.v("ToMenu", player.getNickname());
-                myintent.putExtra("player", player);
+                if(ADM){
+                    ADM = false;
+                    myintent.putExtra("tipo", "adm");
+                    myintent.putExtra("admId", player.getId());
+                    myintent.putExtra("admLogin", player.getNickname());
+                }else{
+                    Log.v("ToMenu", player.getNickname());
+                    myintent.putExtra("tipo", "player");
+                    myintent.putExtra("player", player);
+                }
                 startActivity(myintent);
             } else {
                 Log.v("Tag", "Entrou");

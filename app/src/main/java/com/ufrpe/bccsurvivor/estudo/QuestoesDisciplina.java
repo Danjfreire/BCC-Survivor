@@ -4,8 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,13 +17,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by wallace on 20/11/2017.
@@ -34,6 +29,7 @@ import java.util.List;
 public class QuestoesDisciplina extends AppCompatActivity {
     public static String nomeUsuario;
     public static int idUsuario;
+    public static String tipo;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -100,6 +96,7 @@ public class QuestoesDisciplina extends AppCompatActivity {
         Intent i = getIntent();
         nomeUsuario = i.getExtras().getString("nomeUsuario");
         idUsuario = i.getExtras().getInt("idUsuario");
+        tipo = i.getExtras().getString("tipo");
 
     }
 

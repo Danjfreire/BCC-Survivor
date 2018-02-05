@@ -58,6 +58,10 @@ public class MostrarQuestoes extends AppCompatActivity {
             }
         });
 
+        if(QuestoesDisciplina.tipo.equals("adm")){
+            imgIcon.setVisibility(View.GONE);
+        }
+
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ListaFragmento lista = ListaFragmento.novaInstancia(i.<QuestoesBanco>getParcelableArrayListExtra("questoes"));
         ft.replace(R.id.fragmentoMostrarQuestoes, lista, "lista");

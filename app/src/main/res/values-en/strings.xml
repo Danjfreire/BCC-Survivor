@@ -1,4 +1,5 @@
 <resources>
+    <string name="deletando">removing</string>
     <string name="loginFailure">Could not Sign in, try again</string>
     <string name="app_name">BCC Survivor</string>
     <string name="title_home">Home</string>

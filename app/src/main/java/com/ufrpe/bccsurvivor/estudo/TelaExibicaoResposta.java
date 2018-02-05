@@ -1,12 +1,15 @@
 package com.ufrpe.bccsurvivor.estudo;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,10 +34,11 @@ public class TelaExibicaoResposta extends AppCompatActivity {
     private TextView titulo;
     private TextView subTitulo;
     private TextView id;
-    private TextView resposta;
+    private EditText resposta;
     private Button sim;
     private Button nao;
-
+    private TextView admCont;
+    private TextView gostouR;
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_exibicao_resposta);
@@ -42,20 +46,106 @@ public class TelaExibicaoResposta extends AppCompatActivity {
         titulo = (TextView)findViewById(R.id.tituloExibicaoResposta);
         subTitulo = (TextView)findViewById(R.id.subTituloExicaoResposta);
         id = (TextView) findViewById(R.id.idTituloExicaoResposta);
-        resposta = (TextView) findViewById(R.id.areaExibicaoResposta);
+        resposta = (EditText) findViewById(R.id.areaExibicaoResposta);
         sim = (Button) findViewById(R.id.simr);
         nao = (Button) findViewById(R.id.naor);
+        admCont = (TextView) findViewById(R.id.admContPP);
+        gostouR = (TextView) findViewById(R.id.gostouR);
 
         Intent i = getIntent();
 
         questoesBanco = (QuestoesBanco) i.getParcelableExtra("questao");
+
         titulo.setText("ASSUNTO:"+questoesBanco.getAssuntoQuestao());
-        subTitulo.setText("USUÁRIO:"+QuestoesDisciplina.nomeUsuario);
+        subTitulo.setText("USUÁRIO:"+questoesBanco.getAutorQuestao());
         id.setText("ID:"+questoesBanco.getIdQuestao().toString());
         resposta.setText(questoesBanco.getRespostaQuestao());
 
-        GetAvaliacao getAvaliacao = new GetAvaliacao();
-        getAvaliacao.execute();
+        if(QuestoesDisciplina.tipo.equals("adm")){
+            gostouR.setVisibility(View.GONE);
+            sim.setVisibility(View.GONE);
+            nao.setVisibility(View.GONE);
+            admCont.setVisibility(View.VISIBLE);
+            GetAvaliacaoNUM getnum = new GetAvaliacaoNUM();
+            getnum.execute();
+        }else {
+            gostouR.setVisibility(View.VISIBLE);
+            sim.setVisibility(View.VISIBLE);
+            nao.setVisibility(View.VISIBLE);
+            admCont.setVisibility(View.GONE);
+            GetAvaliacao getAvaliacao = new GetAvaliacao();
+            getAvaliacao.execute();
+        }
+        View view = getCurrentFocus();
+        if(view != null){
+            InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            in.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
+    }
+
+    class GetAvaliacaoNUM extends AsyncTask<Void, Void, Void> {
+
+        ProgressDialog dialog;
+        private int avPositiva;
+        private int avNegativa;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = ProgressDialog.show(TelaExibicaoResposta.this, getString(R.string.aguarde),
+                    getString(R.string.baixando));
+        }
+
+        @Override
+        protected Void doInBackground(Void... strings) {
+
+            try {
+                String url = "http://"+getString(R.string.ip)+":5000/bccsurvivor/avaliacao/quantidade?idQuestao="+ questoesBanco.getIdQuestao().toString() +"&tipoAvaliacao=0&valorAvaliacao=1";
+                URL urlServidor = new URL(url);
+                HttpURLConnection con = (HttpURLConnection) urlServidor.openConnection();
+                con.setRequestMethod("GET");
+                con.setDoInput(true);
+                con.connect();
+                InputStream is = con.getInputStream();
+                JSONArray json = new JSONArray(converterStreamToString(is));
+                is.close();
+                avPositiva = json.length();
+
+                url = "http://"+getString(R.string.ip)+":5000/bccsurvivor/avaliacao/quantidade?idQuestao="+ questoesBanco.getIdQuestao().toString() +"&tipoAvaliacao=0&valorAvaliacao=0";
+                urlServidor = new URL(url);
+                con = (HttpURLConnection) urlServidor.openConnection();
+                con.setRequestMethod("GET");
+                con.setDoInput(true);
+                con.connect();
+                is = con.getInputStream();
+                json = new JSONArray(converterStreamToString(is));
+                is.close();
+                avNegativa = json.length();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        private String converterStreamToString(final InputStream input) throws IOException {
+            final BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            final StringBuilder sBuf = new StringBuilder();
+            String line = null;
+            while((line = reader.readLine()) != null){
+                sBuf.append(line);
+            }
+            input.close();
+            return  sBuf.toString();
+        }
+
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            dialog.dismiss();
+
+            admCont.setText("Avaliações\nPositivas: "+avPositiva+"\nNegativas: "+avNegativa);
+        }
     }
 
     class InserirAvaliacao extends AsyncTask<Integer, Void, Integer> {
@@ -195,5 +285,9 @@ public class TelaExibicaoResposta extends AppCompatActivity {
                 });
             }
         }
+    }
+
+    public void setResposta(String resposta){
+        this.resposta.setText(resposta);
     }
 }

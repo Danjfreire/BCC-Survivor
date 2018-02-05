@@ -1,6 +1,7 @@
 package com.ufrpe.bccsurvivor.estudo;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -75,6 +77,10 @@ public class CaixaTextoQuestao extends DialogFragment implements EditText.OnEdit
                 }
             }
         });
+
+        InputMethodManager in = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        in.toggleSoftInput(InputMethodManager.SHOW_FORCED,InputMethodManager.SHOW_FORCED);
+
     }
 
     private boolean isSmartphone() {
@@ -85,7 +91,12 @@ public class CaixaTextoQuestao extends DialogFragment implements EditText.OnEdit
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
+
         return dialog;
+
+
     }
 
     @Override

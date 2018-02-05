@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class TelaExibicaoFragment extends Fragment {
     private String nomeBotao;
     private TextView tituloE;
     private TextView subTituloE;
-    private TextView conteudoE;
+    private EditText conteudoE;
     private TextView conteudoId;
     private Button botao;
     private Button sim;
@@ -65,7 +66,7 @@ public class TelaExibicaoFragment extends Fragment {
         View viewResposta = inflater.inflate(R.layout.tela_exibicao_questao, container, false);
         tituloE = (TextView) viewResposta.findViewById(R.id.tituloExibicao);
         subTituloE = (TextView) viewResposta.findViewById(R.id.subTituloExicao);
-        conteudoE = (TextView) viewResposta.findViewById(R.id.conteudoExibicao);
+        conteudoE = (EditText) viewResposta.findViewById(R.id.conteudoExibicao);
         conteudoId = (TextView) viewResposta.findViewById(R.id.idTituloExicao);
         botao = (Button) viewResposta.findViewById(R.id.respostaBotao);
         perres = (TextView) viewResposta.findViewById((R.id.perres));

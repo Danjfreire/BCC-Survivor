@@ -20,6 +20,10 @@ public class Player implements Comparable<Player>, Parcelable {
     private Integer scoreRecorde;
 //    public Player(String nickname, int score, int faseAtual, int numVidas, int pulos, int scoreRecorde) {
 
+    public Player(int id, String admLogin){
+        this.id =  id;
+        this.nickname = admLogin;
+    }
 
     public Player(Parcel parcel) {
         this.id = parcel.readInt();

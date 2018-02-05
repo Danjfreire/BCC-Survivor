@@ -58,6 +58,8 @@ public class ListaFragmento extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View lista = inflater.inflate(R.layout.lista_fragmento, container, false);
         ListView lv = (ListView) lista.findViewById(R.id.listaFragmento);
+        lv.setDivider(null);
+        lv.setDividerHeight(60);
 
         fragmentManager = getFragmentManager();
 

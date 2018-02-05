@@ -49,17 +49,22 @@
             android:textColor="@color/colorYellow"
             android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/areaExibicaoResposta"
-            android:layout_width="367dp"
-            android:layout_height="300dp"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:fontFamily="monospace"
-            android:textColor="@android:color/background_dark"
-            android:textSize="22sp"></TextView>
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/areaExibicaoResposta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:fontFamily="monospace"
+                android:textColor="@android:color/background_dark"
+                android:textSize="22sp"/>
+        </ScrollView>
 
         <TextView
             android:layout_width="match_parent"
@@ -67,7 +72,18 @@
             android:gravity="center"
             android:text="@string/gostou_da_resposta"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/gostouR"/>
+
+        <TextView
+            android:id="@+id/admContPP"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorYellow"
+            android:gravity="center"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
